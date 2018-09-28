@@ -1,0 +1,614 @@
+<!--========================================Header Called================================================================-->
+<app-header></app-header>
+<!--========================================End Of Header Call===========================================================-->
+<!--========================================Start Of Main Containt=======================================================-->
+<div class="container w3-padding" *ngIf="UserId!=null">
+  
+    <!--============================================================User Profile=========================-->
+    <div class="row w3-card-4 w3-padding-16">
+     <div class="col-md-2" style="text-align:center">
+        <img [attr.src]="imageShow" class="w3-circle" width="70%">
+        <br/>
+        <span *ngIf="AccountHolder.IsVerified==0">
+            <i class="fa fa-check-circle fa-lg w3-text-yellow"></i>
+        </span>  
+        <span *ngIf="AccountHolder.IsVerified==1">
+            <i class="fa fa-check-circle fa-lg w3-text-green"></i>
+        </span>
+        <span *ngIf="AccountHolder.IsVerified==2">
+            <i class="fa fa-ban w3-text-red"></i>
+        </span>
+        <label>&nbsp;&nbsp;{{AccountHolder.Fname+" "+AccountHolder.Lname}}</label>
+        <br/>
+        <span *ngFor="let i of startYellow">
+            <img src="../../assets/star.png" height="20px"/>
+        </span>  
+        <span *ngFor="let i of startWhite">
+            <img src="../../assets/star-yellow.png" height="20px"/>
+        </span>
+        <hr/> 
+        {{AccountHolder.Points}}
+        <img src="../../assets/award.png" height="25px"/>
+        <hr/>
+        <button class="w3-btn w3-round w3-blue w3-small" [disabled]="isPostRide" routerLink="/User/Post-Ride"
+                data-toggle="tooltip" data-placement="top" title="Post Your Ride Here !"
+        >
+          <img src="../../assets/ride1.png" height="16px"/>
+        </button>
+        &nbsp;
+        <button class="w3-btn w3-blue w3-small w3-round" (click)="show_reffer_modal()"
+           data-toggle="tooltip" data-placement="top" title="Reffer a friend and get up to 100 Points !!!"
+        >
+          <img src="../../assets/share.png" height="16px"/>
+        </button>   
+     </div> 
+     <div class="col-md-5 w3-small">
+      <h6>Your Profile<button class="btn btn-primary w3-right collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      </button></h6>
+      <hr/>
+      <div id="collapseExample" class="collapse" *ngIf="AccountHolder!=null && AccountHolder!=undefined">
+      <!--=========================Form details====================================-->
+      <div class="w3-padding">
+        <!--======================Profile Picture Upload Form==============================-->
+        <form #imageForms="ngForm" (ngSubmit)="onSubmit(Image)" class="w3-small">
+          <div class="form-group">
+            <label>Change Profile Image<span class="w3-small">(Size Max 2MB)</span></label> 
+            <div class="row">
+            <div class="col-md-8">
+                <input type="file" #Image  accept="image/*" (change)="getImageFile($event.target.files)" required/>
+            </div> 
+            <div class="col-md-4">
+                <button class="w3-btn w3-round w3-blue w3-small" [disabled]="Image.value==''">Upload</button>
+            </div> 
+            </div>  
+          </div> 
+        </form>
+        <!--======================End Of Profile Picture Upload Form========================-->
+      </div>
+      <form #AccountProfile="ngForm" (ngSubmit)="updateUser()">
+        <div class="row">
+          <div class="form-group col-md-6">
+                <label><i class="fas fa-dice"></i>First Name:</label>
+                <span class="validation-error w3-small"  *ngIf="(userFname.invalid && userFname.touched)">
+                  <span style="color:red">* Required Field...</span>
+                </span>
+                <input type="text"  name="user_fname" [(ngModel)]="AccountHolder.Fname" 
+                       #userFname="ngModel" required placeholder="Enter your First name..." 
+                       class="form-control" [class.is-invalid]="userFname.invalid"
+                       minlength="3" maxlength="20" pattern="^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$"
+                />
+          </div>
+          <div class="form-group col-md-6">
+                <label>Last Name:</label>
+                <span class="validation-error w3-small"  *ngIf="(userLname.invalid && userLname.touched)">
+                    <span style="color:red">* Required Field...</span>
+                </span>
+                <input type="email" name="user_lname" [(ngModel)]="AccountHolder.Lname" #userLname="ngModel" required
+                       placeholder="Enter your Last name..." class="form-control" [class.is-invalid]="userLname.invalid" 
+                       pattern="^[A-Za-z]*"
+                />
+          </div>
+        </div> 
+        <div class="form-group">
+            <label>Email:</label>
+            <span class="validation-error w3-smal" style="text-align:center" *ngIf="(userEmail.invalid && userEmail.touched)">
+                <span style="color:red;font-size:13px">* Enter a valid Email Id...</span>
+              </span>
+            <input type="email" name="user_email" [(ngModel)]="AccountHolder.Email" #userEmail="ngModel"  required readonly
+              placeholder="Enter your Email..." class="form-control" [class.is-invalid]="userEmail.invalid" 
+              pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+            />
+        </div>
+        <div class="form-group">
+            <label>Contact Number:</label>
+            <span class="validation-error w3-smal" style="text-align:center" *ngIf="(userMobile.invalid && userMobile.touched)">
+              <span style="color:red;font-size:13px">* Enter a valid contact number...</span>
+            </span>
+            <input type="text" name="user_num" [(ngModel)]="AccountHolder.Mobile" 
+                   #userMobile="ngModel" minlength="10" maxlength="10" required
+                   placeholder="Enter your Contact Number..." class="form-control" 
+                   [class.is-invalid]="userMobile.invalid" pattern="^[0-9]*"
+            />
+        </div>
+        <div class="form-group">
+            <label>Date Of Birth:</label>
+            <span class="validation-error w3-small w3-text-red" style="text-align:center" *ngIf="(userDob.invalid && userDob.touched)">
+              <span style="color:red;font-size:13px">> Enter in month/date/year format.</span>
+            </span>
+            <input type="date" name="user_dob" [(ngModel)]="AccountHolder.Dob" #userDob="ngModel"
+                   placeholder="Enter your Date Of Birth..." class="form-control" required
+                   [class.is-invalid]="userDob.invalid" max="2000-08-08" min="1950-01-01"
+            />
+        </div>
+        <div class="form-group">
+            <label>Gender:</label><br/>
+            <input type="radio" name="gender" required [(ngModel)]="AccountHolder.Gender" #userGender="ngModel" [class.is-invalid]="userGender.invalid" value="Male"/>Male
+            <input type="radio" name="gender" required [(ngModel)]="AccountHolder.Gender" #userGender="ngModel" [class.is-invalid]="userGender.invalid" value="Fe-male"/>Female
+        </div>
+        <div class="form-group">
+              <label>Address:</label>
+              <span class="validation-error w3-small w3-text-red"   *ngIf="(userAddress.invalid && userAddress.touched)">
+                <span style="color:red;font-size:13px">* Address should be between (5-200) letters.</span>
+              </span>
+              <input type="text" required name="user_address" [(ngModel)]="AccountHolder.Address" 
+                     #userAddress="ngModel"  placeholder="Enter your Address..." 
+                     class="form-control" [class.is-invalid]="userAddress.invalid" 
+                     minlength="5" maxlength="200" pattern="^[^-\s\\[\\{\]\\}`~!@#$%^&*()_'+=<>:;/.,?][\w\s-,.]+$"
+              />
+        </div>
+        <div class="form-group">
+              <label>City:</label>
+              <span class="validation-error w3-small w3-text-red"   *ngIf="(userCity.invalid && userCity.touched)">
+                  <span style="color:red;font-size:13px">* please enter minimum 3 characters</span>
+              </span>
+              <input type="text" required name="user_city" [(ngModel)]="AccountHolder.City" #userCity="ngModel"  
+                     placeholder="enter your City..." class="form-control" [class.is-invalid]="userCity.invalid" 
+                     minlength="3" maxlength="25" pattern="^[^\s-&][A-Za-z\s-&]*[^\s-&]"
+              />
+        </div>
+        <div class="form-group">
+              <label>State:</label>
+              <span class="validation-error w3-small w3-text-red"   *ngIf="(userState.invalid && userState.touched)">
+                  <span style="color:red;font-size:13px">* Required Field....</span>
+              </span>
+              <input type="text" required name="user_state" [(ngModel)]="AccountHolder.State" #userState="ngModel"  
+                     placeholder="Enter your State..." class="form-control" class="form-control" [class.is-invalid]="userState.invalid" 
+                     minlength="3" maxlength="50" pattern="^[a-zA-Z]+[\-'\s]?[a-zA-Z]+$"
+              />
+        </div>
+        <div class="form-group">
+              <label>Country:</label>
+              <span class="validation-error w3-small w3-text-red"   *ngIf="(userCountry.invalid && userCountry.touched)">
+                <span style="color:red;font-size:13px">* Required Field....</span>
+              </span>
+              <input type="text" required name="user_country" [(ngModel)]="AccountHolder.Country" 
+                     #userCountry="ngModel"  placeholder="Enter your Country..." 
+                     class="form-control"  [class.is-invalid]="userCountry.invalid" 
+                     minlength="3" maxlength="10" pattern="^[A-Za-z]*" value="India" readonly
+              />
+          </div>
+          <div class="form-group">
+               <label>PinCode:</label>
+               <span class="validation-error w3-small w3-text-red"   *ngIf="(userPin.invalid && userPin.touched)">
+                  <span style="color:red;font-size:13px">* Required Field....</span>
+              </span>
+               <input type="text" required name="user_pin" [(ngModel)]="AccountHolder.Pincode" #userPin="ngModel"  placeholder="Enter your Pincode..." 
+               class="form-control" [class.is-invalid]="userPin.invalid" minlength="6" maxlength="6" pattern="^[0-9]*"/>
+          </div>
+        <div class="form-group">
+           <button class="w3-btn w3-blue w3-small w3-round" [disabled]="!AccountProfile.valid">Update</button>
+        </div>
+      </form>  
+      <!--=========================End Of Form Details============================-->
+      </div>
+  
+     </div>   
+     <div class="col-md-5 w3-small">
+       <h6>Your Vehicle<button class="btn btn-primary w3-right collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+      </button></h6> 
+       <hr/>
+       <div id="collapseExample1" class="collapse">
+       <!--=======================Veichle Info Form==============================-->
+       <div class="form-group" *ngIf="veichleDetails.VechileImage!=null">
+        <div class="row">
+          <div class="col-4" id="test" style="text-align:center">
+            <img src="{{APIPATH}}/api/Users/GetimageByName?path={{veichleDetails.VechileImage}}" width="100%"/>
+          </div>
+          <div class="col-8">
+           <!--==========================Vechile Image Upload Form========================================-->
+           <form #vechileImageForm="ngForm" (ngSubmit)="UploadVechileImage(Image)" class="w3-small">
+              <div class="form-group">
+                <label>Change Image:<span class="w3-small">(Size Max 2MB)</span></label> 
+                <div class="row">
+                <div class="col-md-8">
+                    <input type="file" #Image  accept="image/*" (change)="getImageFile($event.target.files)"/>
+                </div> 
+                <div class="col-md-5 w3-padding">
+                    <button class="w3-btn w3-round w3-blue w3-small" [disabled]="Image.value==''">Upload</button>
+                </div> 
+                </div>  
+              </div> 
+            </form>
+           <!--==========================Vechile Imgae Upload Form End====================================-->
+          </div> 
+        </div>  
+       </div>
+       <form #veichleTextData="ngForm"  (ngSubmit)="updateVeichle()"> 
+        <div class="form-group">
+          <label>Registration Number:</label>
+          <span class="validation-error w3-small" style="text-align:center" *ngIf="(vechileRegNumber1.invalid && vechileRegNumber1.dirty)">
+              <span style="color:red">* Please enter a valid Vehicle number</span>
+          </span> 
+          <input type="text" class="form-control" name="regNumber1" 
+                 [(ngModel)]="veichleDetails.VechileRegNumber" #vechileRegNumber1="ngModel"
+                 pattern="^[A-Za-z0-9]{1}[A-Za-z0-9 ]*" 
+                 required [class.is-invalid]="vechileRegNumber1.invalid && vechileRegNumber1.dirty"
+                 placeholder="Ex. OD 02 AB 1045" autocomplete="off"
+          />
+        </div>
+        <div class="form-group">
+          <label>Company Name:</label>
+          <span class="validation-error w3-small" style="text-align:center" *ngIf="(company1.invalid && company1.dirty)">
+              <span style="color:red">* Please enter a valid comapny name...</span>
+          </span>
+          <input type="text" class="form-control" name="company1" [(ngModel)]="veichleDetails.Company" #company1="ngModel"
+                 [class.is-invalid]="company1.invalid  && company1.dirty"
+                 minlength="3" maxlength="20" pattern="^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$" required autocomplete="off"
+          />
+        </div> 
+        <div class="form-group">
+            <label>Model:</label>
+            <span class="validation-error w3-small" style="text-align:center" *ngIf="(model1.invalid && model1.dirty)">
+                <span style="color:red">* Please enter a valid Model...</span>
+            </span>
+            <input type="text" class="form-control" name="model1" [(ngModel)]="veichleDetails.Model" #model1="ngModel"
+              [class.is-invalid]="model1.invalid  && model1.dirty"
+              minlength="2" maxlength="20" pattern="^[a-zA-Z0-9]+[\-'\s]?[a-zA-Z0-9 ]+$" required autocomplete="off"
+            />
+          </div>
+          <div class="form-group">
+              <label>Capacity:</label><span class="w3-small"></span>
+              <span class="validation-error w3-small" style="text-align:center" *ngIf="(seatCapacity1.invalid && seatCapacity1.dirty)">
+                  <span style="color:red">* Capacity should be between (1-9)...</span>
+              </span>
+              <input type="text" class="form-control" name="seatCapacity1" [(ngModel)]="veichleDetails.SeatCapacity" 
+                    #seatCapacity1="ngModel" autocomplete="off"
+                    minlength="1" maxlength="1" pattern="^[1-9]" required [class.is-invalid]="seatCapacity1.invalid  && seatCapacity1.dirty"
+              />
+          </div>
+          <div class="form-group">
+              <label>Ac / Non Ac</label>
+              <select name="isA1c" [(ngModel)]="veichleDetails.IsAc" #isAc1="ngModel" class="form-control" placeholder="Select AC/NON AC...">
+                <option value="1">AC</option>
+                <option value="0">Non AC</option>
+              </select>  
+          </div>
+          <div class="form-group">
+              <button class="w3-btn w3-blue w3-small w3-round" [disabled]="veichleTextData.invalid">Update</button>
+          </div>
+       </form>
+       <!--======================End Of Veichle Info Form========================-->
+      </div>
+     </div>
+    </div>  
+     <!--==================================================End User Profile=========================-->
+     <hr/>
+     <div class="row w3-card-4 w3-padding-16">
+      <div class="col-md-6">
+       <h6>Your Rides<button class="btn btn-primary w3-right collapsed" (click)="showYourRides()" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+         
+      </button></h6>
+       <hr/>
+       <div class="collapse" id="collapseExample2">
+       <!--======================================Single Ride Details======================================-->  
+       <div class="w3-container w3-text-red" id="getUserAsRiderLog_res"></div> 
+       <div class="w3-container w3-padding" style="border-bottom:1px solid blue" *ngFor="let i of RideLogAsRider">
+        <div class="row">
+          <div class="col-md-4" style="text-align:center">
+              <img src="{{APIPATH}}/api/Users/GetimageByName?path={{i[1]['Profile_pic']}}" width="50%" class="w3-circle">
+              <br/>
+              <label>{{i[1]['Fname']+" "+i[1]['Lname']}}</label>
+              <br/>
+              <label class="w3-text-green"><b>{{i[2]['Status']}}</b></label>
+              <br/><br/>
+              <button *ngIf="i[2]['PriceToPay']==i[0][8]" class="w3-btn w3-blue w3-small w3-round" [disabled]="i[2]['Status']!='Accepted'" 
+                      (click)="reedemPoints(i)">Redeem Points</button>
+          </div>
+          <div class="col-md-8 w3-small">
+              <div class="form-group">
+                  <div class="row"> 
+                   <div class="col-6">
+                     <label>{{i[0][0]}}</label> 
+                     <span class="w3-right"><img src="../../assets/arrow.png" height="10px"></span>
+                   </div> 
+                   <div class="col-6">
+                      <label>{{i[0][1]}}</label>
+                    </div> 
+                  </div>
+                 </div>
+            
+                 <div class="form-group">
+                    <div class="row"> 
+                     <div class="col-6">
+                        <img src="../../assets/calendar.png" height="10px"><label>&nbsp;&nbsp;{{i[0][2]}}</label> 
+                     </div> 
+                     <div class="col-6">
+                        <img src="../../assets/calendar.png" height="10px"><label>&nbsp;&nbsp;{{i[0][3]}}</label>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="row"> 
+                       <div class="col-6">
+                          <img src="../../assets/clock.png" height="10px"><label>&nbsp;&nbsp;{{i[0][4]}}</label> 
+                       </div> 
+                       <div class="col-6">
+                          <img src="../../assets/clock.png" height="10px"><label>&nbsp;&nbsp;{{i[0][5]}}</label>
+                        </div> 
+                      </div>
+                    </div>
+                  <div class="form-group">
+                      <div class="row"> 
+                       <div class="col-6" *ngIf="i[2]['PriceToPay']!=null">
+                         <span *ngIf="i[0][8]>i[2]['PriceToPay']">
+                          <b class="w3-text-red" style="text-decoration: line-through;">&#8377;&nbsp;{{i[0][8]}}/-</b>
+                            &nbsp;&nbsp;
+                            <b class="w3-text-green">&#8377;&nbsp;{{i[2]['PriceToPay']}}/-</b>
+                         </span> 
+                         <span *ngIf="i[0][8]==i[2]['PriceToPay']">
+                            <b class="w3-text-green">&#8377;&nbsp;{{i[2]['PriceToPay']}}/-</b>
+                         </span> 
+                       </div> 
+                        <div class="col-6">
+                            <button class="w3-btn w3-small w3-round w3-blue" [disabled]="i[0][9]!='Complete'" (click)="redirectToFeedback(i[0],i[1],i[2])">Feedback</button>
+                        </div> 
+                      </div>
+                    </div>
+            </div>
+        </div>  
+       </div>
+       <!--====================================End Of Single Ride Details=======================================-->
+        </div>
+      </div>
+      <!--==============================================User As Ride Hodt============================================-->
+      <div class="col-md-6">
+        <h6>Ride You Host<button (click)="showRidesYouHost()" class="btn btn-primary w3-right collapsed" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+         
+      </button></h6>
+        <hr/>
+        <div class="collapse" id="collapseExample3">
+        <!--===================================Single Ride======================================-->
+        <div class="w3-container w3-text-red" id="getUserAsHostRideLog_res"></div>
+        <div class="w3-container w3-padding" style="border-bottom:1px solid blue" *ngFor="let rideArray of RideLogAsHost">
+          <div class="row">
+            <div class="col-md-9 w3-small">
+                <div class="form-group">
+                    <div class="row"> 
+                     <div class="col-6">
+                       <label>{{rideArray[8]}}</label> 
+                       <span class="w3-right"><img src="../../assets/arrow.png" height="10px"></span>
+                     </div> 
+                     <div class="col-6">
+                        <label>{{rideArray[9]}}</label>
+                      </div> 
+                    </div>
+                   </div>
+              
+                   <div class="form-group">
+                      <div class="row"> 
+                       <div class="col-6">
+                          <img src="../../assets/calendar.png" height="10px"><label>&nbsp;&nbsp;{{rideArray[1]}}</label>
+                          <span class="w3-right"><img src="../../assets/arrow.png" height="10px"></span>
+                       </div> 
+                       <div class="col-6">
+                          <img src="../../assets/calendar.png" height="10px"><label>&nbsp;&nbsp;{{rideArray[2]}}</label>
+                        </div> 
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row"> 
+                         <div class="col-6">
+                            <img src="../../assets/clock.png" height="10px"><label>&nbsp;&nbsp;{{rideArray[3]}}</label>
+                            <span class="w3-right"><img src="../../assets/arrow.png" height="10px"></span>
+                         </div> 
+                         <div class="col-6">
+                            <img src="../../assets/clock.png" height="10px"><label>&nbsp;&nbsp;{{rideArray[4]}}</label>
+                          </div> 
+                        </div>
+                      </div>
+            </div>
+            <div class="col-md-3 w3-small" style="text-align:center">
+                <h6 class="w3-text-green w3-bold">&#8377;{{rideArray[7]}}/-</h6>
+                <label>{{rideArray[10]}}</label><hr/>
+                <i class="fa fa-user"></i>{{5}}
+                <hr/>
+                <button class="w3-btn w3-small w3-round w3-blue" (click)="viewRideYouHost( rideArray[0] )">View</button>
+            </div>
+          </div>  
+         </div>
+       <!--===================================Single Ride======================================-->
+       
+      </div>
+     </div>
+     <!--======================================End Of Ride As Host============================================-->
+    </div>
+    <hr/>
+    <!--========================================Feedback Details===============================-->
+    <div class="row w3-card-4 w3-padding-16">
+      <div class="col-md-6">
+       <h6>Your Reviews<button (click)="showYourReviews()" class="btn btn-primary w3-right collapsed" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+              
+          </button></h6>
+       <hr/>
+       <div class="collapse" id="collapseExample4">
+       <!--==============================Single Review=========================================-->
+       <div class="w3-container w3-text-red" id="reviewGivenByUser_res"></div> 
+       <div class="w3-container w3-padding w3-border-bottom" *ngFor="let i of reviewGivenByUserDetails">
+          <div class="row">
+             <div class="col-md-4" style="text-align:center">
+                 <img src="{{APIPATH}}/api/Users/GetimageByName?path={{i[1]['Profile_Pic']}}" width="50%" class="w3-circle"/>
+                 <br/>
+                 <label>{{i[1]['Fname']+" "+i[1]['Lname']}}</label><br/>
+                 <span *ngFor="let temp of startRating">
+                   <span *ngIf="i[1]['Rating']>=temp">
+                      <img src="../../assets/star.png" height="15px"/>
+                   </span> 
+                   <span *ngIf="i[1]['Rating']<temp">
+                      <img src="../../assets/star-yellow.png" height="15px"/>
+                   </span>
+                  </span> 
+                  <hr/>
+                 <span class="w3-small">Ride Host</span>
+             </div>
+             <div class="col-md-8" style="border-left:2px solid blue;">
+                <div class="row">
+                    <div class="col-2" style="text-align:center">
+                      <img src="{{APIPATH}}/api/Users/GetimageByName?path={{i[1]['Profile_Pic']}}" width="100%" class="w3-circle"/>
+                    </div>
+                    <div class="col-10">
+                        <label>{{i[0]['Fname']+" "+i[0]['Lname']}}</label>
+                        <span *ngFor="let temp of startRating1">
+                            <span *ngIf="i[2]['Rating']>=temp">
+                               <img src="../../assets/star.png" height="15px"/>
+                            </span> 
+                            <span *ngIf="i[2]['Rating']<temp">
+                               <img src="../../assets/star-yellow.png" height="15px"/>
+                            </span>
+                        </span>
+                    </div>   
+                </div> 
+                <div class="row w3-padding w3-small">
+                  <p>
+                    {{i[2]['Review']}}
+                  </p>
+                </div>  
+             </div> 
+          </div>    
+       </div>   
+       <!--=============================End Of Single Review===================================-->
+       </div>
+      </div>
+      <div class="col-md-6">
+        <h6>What People Say About You??<button (click)="feedbackAboutYou()" class="btn btn-primary w3-right collapsed" type="button" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
+              
+          </button></h6>  
+        <hr/>
+        <div class="collapse" id="collapseExample5">
+       <!--==============================Single Review=========================================-->
+       <div class="w3-container w3-text-red" id="reviewForUser_res"></div>
+       <div class="w3-container w3-padding w3-border-bottom" *ngFor="let i of reviewForUserDetails">
+          <div class="row">
+             <div class="col-md-4" style="text-align:center">
+                 <img src="{{APIPATH}}/api/Users/GetimageByName?path={{i[1]['Profile_Pic']}}" width="50%" class="w3-circle"/>
+                 <br/>
+                 <label>{{i[1]['Fname']+" "+i[1]['Lname']}}</label><br/>
+                 <span *ngFor="let temp of startRating">
+                   <span *ngIf="i[1]['Rating']>=temp">
+                      <img src="../../assets/star.png" height="15px"/>
+                   </span> 
+                   <span *ngIf="i[1]['Rating']<temp">
+                      <img src="../../assets/star-yellow.png" height="15px"/>
+                   </span>
+                  </span>
+                  <hr/> 
+                 <span class="w3-small">Ride Host</span>
+             </div>
+             <div class="col-md-8" style="border-left:2px solid blue;">
+                <div class="row">
+                    <div class="col-2" style="text-align:center">
+                      <img src="{{APIPATH}}/api/Users/GetimageByName?path={{i[1]['Profile_Pic']}}" width="100%" class="w3-circle"/>
+                    </div>
+                    <div class="col-10">
+                        <label>{{i[0]['Fname']+" "+i[0]['Lname']}}</label>
+                        <span *ngFor="let temp of startRating1">
+                            <span *ngIf="i[2]['Rating']>=temp">
+                               <img src="../../assets/star.png" height="15px"/>
+                            </span> 
+                            <span *ngIf="i[2]['Rating']<temp">
+                               <img src="../../assets/star-yellow.png" height="15px"/>
+                            </span>
+                        </span>
+                    </div>   
+                </div> 
+                <div class="row w3-padding w3-small">
+                  <p>
+                    {{i[2]['Review']}}
+                  </p>
+                </div>  
+             </div> 
+          </div>    
+       </div>   
+       <!--=============================End Of Single Review===================================-->
+        </div>
+      </div>
+    </div>
+    <hr/>
+  </div>  
+    
+<!--========================================End Of Main Content=========================================================-->
+<!--========================================Footer Called================================================================-->
+<app-footer></app-footer>
+<!--========================================End Of Footer Call===========================================================-->
+<div class="w3-modal" id="refferal_modal">
+  <div class="row">
+   <div class="col-md-4"></div>
+   <div class="col-md-4">
+     <img src="../../assets/offer.gif" height="100px" style="margin-left:-50px"/>
+     <div class="w3-card-2 w3-padding w3-white w3-round" style="margin-top:-49px">
+       <button class="w3-circle w3-red w3-right" (click)="close_reffer_modal()"><b>&times;</b></button>
+       <br/>
+       <h5 class="w3-padding w3-text-teal" style="font-family: 'Courgette', cursive;"><b>Refer a friend and get 100 points on his Sign Up...</b></h5>
+       <form #refferalForm="ngForm" (ngSubmit)="submitRefferalCode()">
+          <div class="form-group">
+            <div class="row w3-padding">
+              <div class="col-md-9">
+                  <span class="validation-error w3-smal" style="text-align:center" *ngIf="(refferalEmail1.invalid && refferalEmail1.touched)">
+                      <span style="color:red;font-size:13px">* Enter a valid Email Id...</span>
+                    </span>
+                  <input type="email" name="refferal_Email" [(ngModel)]="refferalCode.refferal_email" #refferalEmail1="ngModel" required
+                    placeholder="Enter refferal Email id..." class="form-control" [class.is-invalid]="refferalEmail1.invalid" 
+                    pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                  />
+              </div> 
+              <div class="col-md-3">
+                <button class="w3-btn w3-small w3-round w3-blue"[disabled]="refferalEmail1.invalid">Send</button>
+              </div> 
+            </div>  
+          </div>
+       </form>
+       <div class="form-group w3-center w3-bold">
+           Your Referral Code:&nbsp;&nbsp;<b>{{refferalCode.refferal_code}}</b>
+       </div> 
+     </div> 
+   </div>
+   <div class="col-md-4"></div>
+  </div>  
+</div>  
+<!--==============================================Redeem Points Modal================================================-->
+<div class="w3-modal" id="redeem_points_modal">
+  <div class="row" *ngIf="reedemPointsData.length!=0">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 w3-center">
+     <h5 class="w3-blue w3-padding">
+       Reedem Your Points
+       <span class="w3-right w3-text-red" (click)="close_reedem_points()"><b>&times;</b></span>
+     </h5>
+     <div class="w3-card-4 w3-white w3-padding w3-center" style="margin-top:-10px;text-align:left;">
+       <div class="form-group">
+          <div class="row"> 
+           <div class="col-6">
+             <label>{{reedemPointsData[0][0]}}</label> 
+             <span class="w3-right"><img src="../../assets/arrow.png" height="10px"></span>
+           </div> 
+           <div class="col-6">
+              <label>{{reedemPointsData[0][1]}}</label>
+            </div> 
+          </div>
+         </div>
+       <div class="form-group">
+          <div class="row"> 
+           <div class="col-6">
+              <img src="../../assets/calendar.png" height="10px"><label>&nbsp;&nbsp;{{reedemPointsData[0][2]}}</label> 
+           </div> 
+           <div class="col-6">
+              <img src="../../assets/calendar.png" height="10px"><label>&nbsp;&nbsp;{{reedemPointsData[0][3]}}</label>
+            </div> 
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="row"> 
+             <div class="col-6">
+                <img src="../../assets/clock.png" height="10px"><label>&nbsp;&nbsp;{{reedemPointsData[0][4]}}</label> 
+             </div> 
+             <div class="col-6">
+                <img src="../../assets/clock.png" height="10px"><label>&nbsp;&nbsp;{{reedemPointsData[0][5]}}</label>
+              </div> 
+            </div>
+        </div>
+        <h6>Points Available:&nbsp;&nbsp;<b><img src="../../assets/award.png" height="25px"/>{{AccountHolder.Points}}</b>&nbsp;(&#8377;<b>{{AccountHolder.Points/10}}</b>/-)&nbsp;&nbsp;&nbsp;&nbsp;Price to pay:&nbsp;&nbsp;<b><b>&#8377;&nbsp;{{reedemPointsData[0][8]}}/-</b></b></h6>
+        <button class="w3-btn w3-small w3-round w3-blue" (click)="reedem_points(reedemPointsData[2]['Id'])" [disabled]="AccountHolder.Points==0">Redeem</button>
+      </div> 
+    </div>  
+  </div>   
+</div>  
+<!--==============================================End Of Redeem Points Modal=========================================-->

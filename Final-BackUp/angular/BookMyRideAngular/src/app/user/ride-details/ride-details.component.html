@@ -1,0 +1,183 @@
+<app-header></app-header>
+<div class="container w3-padding-16">
+   <!--==========================================Search Result======================================================-->
+   <div class="w3-card-4 w3-padding">
+      <div class="row"> 
+         <div class="col-md-3" style="text-align:center">
+            <div *ngIf="RideHostVeichleDetails!=null;else divRideHostContainer"> 
+              <img src="{{APIPATH}}/api/Users/GetimageByName?path={{RideHostVeichleDetails.VechileImage}}" width="80%"/>
+              <br/>
+              <hr/>
+              <b>{{RideHostVeichleDetails.VechileRegNumber}}</b>
+              <br/>
+              <span class="w3-small">{{RideHostVeichleDetails.Company}}</span><br/>
+              <span class="w3-small">{{RideHostVeichleDetails.Model}}</span>
+            </div>
+         </div>
+         <div class="col-md-6 w3-padding">
+              <div class="form-group">
+                <div class="row"> 
+                 <div class="col-6">
+                  <div *ngIf="RideLogDetails[5]!=null;else container1"> 
+                   <label>{{RideLogDetails[5]}}</label> 
+                   <span class="w3-right"><img src="../../assets/arrow.png" height="20px"></span>
+                  </div>   
+                 </div> 
+                 <div class="col-6">
+                    <div *ngIf="RideLogDetails[5]!=null;else container1">
+                      <label>{{RideLogDetails[6]}}</label>
+                    </div>
+                  </div> 
+                </div>
+               </div>
+          
+               <div class="form-group">
+                  <div class="row"> 
+                   <div class="col-6">
+                      <div *ngIf="RideLogDetails[5]!=null;else container1"> 
+                        <img src="../../assets/calendar.png" height="20px"><label>&nbsp;&nbsp;{{RideLogDetails[1]}}</label> 
+                        <span class="w3-right"><img src="../../assets/arrow.png" height="20px"></span>
+                      </div>
+                   </div> 
+                   <div class="col-6">
+                      <div *ngIf="RideLogDetails[5]!=null;else container1">
+                       <img src="../../assets/calendar.png" height="20px"><label>&nbsp;&nbsp;{{RideLogDetails[2]}}</label>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="row"> 
+                     <div class="col-6">
+                        <div *ngIf="RideLogDetails[5]!=null;else container1">
+                          <img src="../../assets/clock.png" height="20px"><label>&nbsp;&nbsp;{{RideLogDetails[3]}}</label> 
+                          <span class="w3-right"><img src="../../assets/arrow.png" height="20px"></span>
+                        </div>
+                     </div> 
+                     <div class="col-6">
+                        <div *ngIf="RideLogDetails[5]!=null;else container1">
+                          <img src="../../assets/clock.png" height="20px"><label>&nbsp;&nbsp;{{RideLogDetails[4]}}</label>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                <div class="form-group">
+                    <div class="row"> 
+                     <div class="col-6">
+                        <div *ngIf="RideLogDetails[5]!=null;else container1">
+                          <h6><b>&#8377;{{RideLogDetails[10]}} / Per Rider</b></h6>
+                        </div>
+                     </div> 
+                      <div class="col-6">
+                          <div *ngIf="RideLogDetails[5]!=null;else container1">
+                              {{ RideHostDetails[8] }}
+                           <img src="../../assets/TotalSeat.png" height="20px;"/>&nbsp;{{ RideLogDetails[8]}}
+                           &nbsp;&nbsp;&nbsp;&nbsp;
+                           <img src="../../assets/vacandSeat.png" height="20px;"/>{{ RideLogDetails[9]}}
+                          </div> 
+                      </div> 
+                    </div>
+               </div> 
+               <ng-template #container1>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" style="width:100%"></div>
+                  </div>
+               </ng-template> 
+              <div class="form-group">
+                <div class="row">
+                 <div class="col-md-8">
+                  <select class="form-control" name="Ride_Log_Status" #RideLogStatus="ngModel" [(ngModel)]="rideStatus">
+                    <option value="Pending" *ngIf="RideLogDetails[7]!='Ongoing' && RideLogDetails[7]!='Complete'">Pending</option>
+                    <option value="Ongoing" *ngIf="RideLogDetails[7]!='Complete'">Ongoing</option>
+                    <option value="Complete">Complete</option>
+                  </select>  
+                 </div> 
+                 <div class="col-md-4">
+                  <button class="w3-btn w3-small w3-round w3-blue" [disabled]="!RideLogStatus.dirty || RideLogDetails[7]=='Complete'" (click)="updateRideLogStatus()">Update</button>
+                 </div> 
+                </div>  
+              </div>  
+         </div>
+         <div class="col-md-3" style="text-align:center">
+          <div *ngIf="RideHostDetails!=null;else divRideHostContainer"> 
+              <img src="{{APIPATH}}/api/Users/GetimageByName?path={{RideHostDetails.Profile_pic}}" width="50%" class="w3-circle"/><br/>
+              <b>{{RideHostDetails.Fname+" "+RideHostDetails.Lname}}</b><br/>
+              <span *ngFor="let i of startYellow">
+                  <img src="../../assets/star.png" height="20px"/>
+              </span>  
+              <span *ngFor="let i of startWhite">
+                  <img src="../../assets/star-yellow.png" height="20px"/>
+              </span>
+            </div>
+         </div>
+         <ng-template #divRideHostContainer>
+          <div class="w3-contaier w3-padding-16 w3-center"> 
+           <img src="../../assets/loading1.gif" width="40%"/>
+          </div> 
+         </ng-template>
+     </div>
+    </div>
+    <hr/>
+    <!--==========================================Search Result======================================================-->
+    <div class="w3-card-4 w3-padding"> 
+    <div class="row">
+      <div class="col-md-6 w3-padding">
+        <h5><b>Approved People:</b></h5>
+        <hr/>
+         <!--=======================================Requested===================================-->
+         <div *ngIf="acceptedPeople.length!=0;else approvedElse">
+            <div class="w3-container w3-padding" *ngFor="let i of acceptedPeople">
+                <div class="row">
+                  <div class="col-3" style="text-align:center">
+                      <img src="{{APIPATH}}/api/Users/GetimageByName?path={{i[1]['Profile_pic']}}" class="w3-circle" width="60%"/>
+                  </div>
+                  <div class="col-4" style="border-left:1px solid blue">
+                    <label>{{i[1]['Fname']+" "+i[1]['Lname']}}</label><br/>
+                    <label class="w3-small">{{ i[1]['Email'] }}</label><br/>
+                    <span class="w3-small">{{i[1]['Mobile']}}</span>
+                  </div>
+                  <div class="col-5" style="text-align:center">
+                    <b class="w3-text-green">Accepted</b>
+                  </div>
+                </div> 
+              </div>
+         </div>
+         <ng-template #approvedElse>
+            <span class="w3-text-red">No Accepted Ride Log Foound...</span>
+        </ng-template>  
+         <!--=======================================Requested===================================-->
+      </div>
+      <div class="col-md-6 w3-padding">
+          <h5><b>Interested People:</b></h5>
+          <hr/>
+          <!--=======================================Requested===================================-->
+          <div class="w3-container w3-padding" id="intresetedPeopleLog" *ngIf="intrestedPeople!=null;else divRideHostContainer1">
+           <div class="row w3-padding" *ngFor="let i of intrestedPeople">
+             <div class="col-2" style="text-align:center">
+                 <img src="{{APIPATH}}/api/Users/GetimageByName?path={{i[1]['Profile_pic']}}" class="w3-circle" width="100%"/>
+             </div>
+             <div class="col-5" style="border-left:2px solid blue">
+                <label>{{i[1]['Fname']+" "+i[1]['Lname']}}</label><br/>
+                <label class="w3-small">{{ i[1]['Email'] }}</label><br/>
+                <span class="w3-small">{{i[1]['Mobile']}}</span>
+             </div>
+             <div class="col-5" style="text-align:center">
+                <i class="fa fa-info-circle fa-lg w3-text-yellow"></i>&nbsp;{{i[0]['Status']}}
+               <hr/>
+               <button class="w3-btn w3-blue w3-small" *ngIf="i[0]['Status']!='Accepted'" (click)="acceptRide(i[0]['Id'])">Accept</button>
+               <button class="w3-btn w3-black w3-small" *ngIf="i[0]['Status']!='Rejected'" (click)="rejectRide(i[0]['Id'])">Decline</button>
+             </div>
+             <hr/>
+           </div> 
+          </div> 
+          <ng-template #divRideHostContainer1>
+              <div class="w3-contaier w3-padding-16 w3-center"> 
+               <img src="../../assets/loading1.gif" width="40%"/>
+              </div> 
+          </ng-template>
+          <!--=======================================Requested===================================-->
+         </div>  
+    </div>
+    </div>  
+</div>
+<app-footer></app-footer>

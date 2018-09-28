@@ -1,0 +1,116 @@
+h2{
+    font-family: 'Do Hyeon', sans-serif;
+}
+h5{
+    font-family: 'Lobster', cursive;
+}
+p{
+    font-family: 'Corben', cursive;
+}
+h1{
+    font-family: 'Courgette', cursive;
+    color: white;
+    font-size: 45px;
+    font-weight: 8px;
+    text-shadow: 2px 2px black;
+}
+h5{
+    text-shadow: 2px 2px black;
+}
+#parallax1 { 
+    /* The image used */
+    background-image: url(bg7.jpg);
+
+    /* Set a specific height */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parallax2 { 
+  /* The image used */
+  background-image: url(bg8.jpg);
+
+  /* Set a specific height */
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.circle{
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    background-color: #534bae;
+    padding-left:22px;
+    padding-top:12px;
+    font-size: 25px;
+    background-color: #0009FF;
+    color: white;
+  }
+  .circle1{
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    background-color: #534bae;
+    padding-left:10px;
+    padding-top:1px;
+    font-size: 18px;
+    background-color: #4A00FF;
+    color: white;
+  }
+  .border_left{
+    border-left: 1px dotted white;
+    color: white;
+    font-weight:20px;
+    text-shadow: 2px 2px black;
+  }
+  .border_left_blue{
+    border-left: 5px solid #000051;
+    font-weight:20px;
+  }
+  .fancy-border {
+    text-align:center;
+    border-top: 5px solid;
+    border-image:   linear-gradient(to right, grey 25%, yellow 25%, yellow 50%,red 50%, red 75%, teal 75%) 5;
+  }
+  .responsive {
+      width: 100%;
+      height: auto;
+  }
+
+  input,select {
+    background-color: rgba(0,0,0,0.1);
+    color:rgba(250, 250, 250, 0.80);
+    border:1px solid rgba(251, 250, 250, 0.80);
+    }
+  #search_container{
+      background-color: rgba(72, 71, 71, 0.80);
+  }  
+  .typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }

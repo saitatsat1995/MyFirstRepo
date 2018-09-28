@@ -1,0 +1,264 @@
+
+<app-header>
+  
+  
+  </app-header>
+  
+  <div>
+  
+    <!--============= user management heading starts============-->
+    <div class="w3-bar w3-blue-grey w3-padding  w3-xlarge">
+      <span class="w3-bar-item">USER MANAGEMENT</span>
+    </div>
+    <!--============= user management heading starts============-->
+  
+    <!--================ search starts ==========================-->
+    <div class="w3-row w3-grey w3-padding ">
+      <div class="w3-half w3-center " style="margin-left:25%">
+        <input type="text" class=" w3-border-0 w3-padding w3-round-xlarge w3-rounder" style="width:100%;"  [(ngModel)]="searchVar" placeholder=" Type to search...">
+      </div>
+    </div>
+    <!--================ search ends ==========================-->
+  
+    <!--================ card starts ==========================-->
+    <div class="container">
+      <div *ngIf="user!==null">
+        <div class="w3-padding" *ngFor="let userOne of user | UserSearchFilter:searchVar | paginate: { itemsPerPage: 10, currentPage: p }">
+
+        <div class="row w3-card-2 w3-round" *ngIf="userOne.userSingle.Id!=UserId">
+          <div class="col-md-2 w3-padding">
+              <img src="{{this.global.WebApiPath}}/api/Users/GetimageByName?path={{userOne.userSingle.Profile_pic}}" width="60%" class="w3-circle"/>
+          </div>
+          <div class="col-md-4">
+              <h5>{{userOne.userSingle.Fname+" "+userOne.userSingle.Lname}}&nbsp;&nbsp;<i class="fa fa-check-circle" aria-hidden="true" [hidden]="userOne.userSingle.IsVerified != 1"></i></h5>
+              <h6>{{userOne.userSingle.Email}}</h6>
+              <h6>{{userOne.userSingle.Mobile}}</h6>
+          </div>
+          <div class="col-md-3">
+              <h5>Rides Taken:{{userOne.ridesTaken}}</h5>
+              <h5>Rides hosted:{{userOne.ridesHosted}}</h5>
+          </div>
+          <div class="col-md-3">
+              <div class="w3-section" *ngIf="userOne.userSingle.IsVerified == 0">
+                  <button class="w3-button w3-green w3-hover-teal w3-small w3-round" id="userOne.userSingle.Id+'e'" (click)="editClick(userOne.userSingle)">Edit</button>&nbsp;
+                  <button class="w3-button w3-blue w3-hover-indigo w3-small w3-round" id="userOne.userSingle.Id+'v'"
+                    (click)="VerifyClick(userOne.userSingle)">Verify</button>&nbsp;
+                  <button class="w3-button w3-red w3-small w3-round" [id]="userOne.userSingle.Id+'b'" (click)="isBlocked(userOne.userSingle)">Block</button>
+    
+                </div>
+                <div class="w3-section" *ngIf="userOne.userSingle.IsVerified == 1">
+                  <button class="w3-button w3-green w3-hover-teal w3-small w3-round" id="userOne.userSingle.Id+'e'" (click)="editClick(userOne.userSingle)">Edit</button>&nbsp;
+    
+                  <button class="w3-button w3-blue w3-hover-indigo w3-small w3-round" id="userOne.userSingle.Id+'v'"
+                    (click)="VerifyClick(userOne.userSingle)">Verified</button>&nbsp;
+                  <button class="w3-button w3-red w3-small w3-round" [id]="userOne.userSingle.Id+'b'" (click)="isBlocked(userOne.userSingle)">Block</button>
+    
+                </div>
+                <div class="w3-section" *ngIf="userOne.userSingle.IsVerified == 2">
+                  <button class="w3-button w3-green w3-hover-teal w3-small w3-round" id="userOne.userSingle.Id" (click)="editClick(userOne.userSingle)">Edit</button>&nbsp;
+                  <button class="w3-button w3-blue w3-hover-indigo w3-small w3-round" id="userOne.userSingle.Id+'vb'"
+                    disabled (click)="VerifyClick(userOne.userSingle)">Verify</button>&nbsp;
+                  <button class="w3-button w3-red w3-small w3-round" [id]="userOne.userSingle.Id+'b3'" (click)="isBlocked(userOne.userSingle)">Unblock</button>
+                </div>
+          </div>  
+        </div>  
+        </div>
+      </div>
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>
+  </div>
+  <!-- </div>
+  </div> -->
+  <!--================ card ends ===================================-->
+  
+  
+  
+  <!-- // Rishabh Edit start -->
+  
+  
+  <div id="myModal1" class="w3-modal" *ngIf="AccountHolder!==null">
+    <div class="">
+      <div class="w3-modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><b>Edit</b></h4>
+          <button class="w3-btn" type="button" (click)="onCloseEdit(myEditForm)">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-md-6">
+              <div class="containerdetailsedit">
+                  <div class="form-group">
+                    <div class="w3-panel w3-light-blue">
+                      <h2 class="w3-opacity">Details</h2>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                      
+                      <div class="form-group col-md-6">
+        
+                        <label>First Name:</label>
+        
+                        <input type="text" name="user_fname" [value]="AccountHolder.Fname" readonly class="form-control" />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Last Name:</label>
+        
+                        <input type="text" name="user_lname" [value]="AccountHolder.Lname" readonly class="form-control" />
+        
+                      </div>
+                    </div>
+        
+                    <div class="form-group ">
+                      <label>Email:</label>
+                      <input type="email" name="user_email" [value]="AccountHolder.Email" readonly class="form-control" />
+                    </div>
+                    <div class="form-group ">
+                      <label>Contact Number:</label>
+        
+                      <input type="text" name="user_num" [value]="AccountHolder.Mobile" readonly class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label>Date Of Birth:</label>
+        
+                      <input type="date" name="user_dob" [value]="AccountHolder.Dob" class="form-control" readonly/>
+                    </div>
+        
+                    <div class="form-group">
+                      <label>Address:</label>
+        
+                      <input type="text" required name="user_address" [value]="AccountHolder.Address" class="form-control" readonly />
+                    </div>
+                    <div class="form-group">
+                      <label>City:</label>
+        
+                      <input type="text" name="user_city" [value]="AccountHolder.City" class="form-control" readonly />
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-6">
+              <div class="containerpasswordedit">
+                  <div>
+                    <form #myEditForm="ngForm">
+                    <div class="form-group">
+                      <div class="w3-panel w3-light-blue">
+                        <h2 class="w3-opacity">Password</h2>
+                      </div>
+                      <hr/>
+                      <p style="color:red">* marked are compulsory</p>
+                      <label for="user_pass"><i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Password:<span style="color:red">*</span></label>
+                      <input type="password" style="background-color:#FFFFE0;color:black;font:italic;" id="user_pass" required name="user_pass" placeholder="Enter your Password..."
+                        class="form-control" [(ngModel)]="password"  #userPass="ngModel" 
+                        [class.is-invalid]="userPass.invalid && userPass.dirty" minlength="8" maxlength="15"  pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.-^*()%!]).*$"/>
+                        <div class="validation-error" oncopy="return false" onpaste="return false" style="text-align:center" *ngIf="(userPass.invalid && userPass.dirty)"><span style="color:red;font-size:13px">> Must contain at least:One number,One uppercase,lowercase letter,One Special character and, at least 8 or more characters</span></div>
+                    </div>
+        
+        
+                    <div class="form-group">
+                      <label for="user_cpass"><i class="fa fa-key" aria-hidden="true"></i>&nbsp;Confirm-Password:<span style="color:red">*</span></label>
+                      <input type="password" id="user_cpass" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_cpass"
+                        placeholder="Enter your Password Again..." class="form-control" [(ngModel)]="confirmPassword" #userCpass="ngModel"
+                        [class.is-invalid]="(userCpass.dirty  && userPass.invalid)"  minlength="8" maxlength="15"  pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.-^*()%!]).*$"/>
+                        <div class="validation-error"   oncopy="return false" onpaste="return false" style="text-align:center" *ngIf="(userPass.value!=userCpass.value) && userCpass.dirty"><span style="color:red;font-size:13px">re-enter same password</span></div>
+                        
+        
+                    </div>
+        
+        
+                    <div align="center">
+        
+                      <button (click)="pwdUpdate()" class="w3-btn w3-round w3-green" [id]="AccountHolder.Id" [disabled]="!myEditForm.valid || password!=confirmPassword" style="width:50%" ><i>Update</i></button>
+                      <button (click)="onCloseEdit(myEditForm)" class="w3-btn w3-round w3-red">Close</button>
+                    </div>
+                   
+                    </form>
+                  </div>
+                </div>
+          </div>  
+         </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <div id="myModal2" class="w3-modal">
+    <div class="">
+      <div class="w3-modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><b>View</b></h4>
+          <button type="button" (click)="closeVerify()">&times;</button>
+  
+        </div>
+        <div id="myverification" class="modal-body">
+  
+          <div class="container" style="width:100%">
+            <div class="form-group">
+              <div class="w3-panel w3-light-blue">
+                <h2 class="w3-opacity">Verification</h2>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="form-group col-md-6">
+  
+                  <label>First Name:</label>
+  
+                  <input type="text" name="user_fname" [value]="AccountHolder.Fname" readonly class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Last Name:</label>
+  
+                  <input type="text" name="user_lname" [value]="AccountHolder.Lname" readonly class="form-control" />
+  
+                </div>
+              </div>
+  
+              <div class="form-group ">
+                <label>Contact Number:</label>
+  
+                <input type="text" name="user_num" [value]="AccountHolder.Mobile" readonly class="form-control" />
+              </div>
+              <div class="form-group">
+                <label>Date Of Birth:</label>
+  
+                <input type="date" name="user_dob" [value]="AccountHolder.Dob" class="form-control" readonly/>
+              </div>
+  
+              <div class="form-group">
+                <label>Address:</label>
+  
+                <input type="text" required name="user_address" [value]="AccountHolder.Address" class="form-control" readonly />
+              </div>
+  
+              <!-- <div class="w3-panel w3-yellow">
+                <h1 class="w3-opacity">
+                  <b>Aadhar Card</b></h1>
+              </div>
+              <div align="center">
+                <img src="aadhar.png" class="image" style="width:100%">
+              </div> -->
+  
+              <div class="form-group" align="center" style="padding-top:10px;margin:5px">
+  
+                <button class="w3-btn  w3-round-xxlarge w3-large w3-blue w3-hover-indigo" [hidden]="AccountHolder.IsVerified == 1" [id]="AccountHolder.Id" (click)="isVerify()" style="width:50%"><i>Verify</i></button>
+                
+              </div>
+              <!-- <button type="button" class="close" data-dismiss="modal" style="color:blue">Close</button> -->
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  <app-footer></app-footer>

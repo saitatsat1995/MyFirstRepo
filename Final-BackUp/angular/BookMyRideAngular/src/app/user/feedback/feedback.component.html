@@ -1,0 +1,57 @@
+<!--========================================Header Called================================================================-->
+<app-header></app-header>
+<!--========================================End Of Header Call===========================================================-->
+<!--========================================Start Of Main Containt=======================================================-->
+
+<div class="container w3-padding-64">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 w3-padding-64">
+      <h5 class="w3-center"><b>Review The Host</b></h5>
+      <hr/>
+      <div class="row">
+        <div class="col-md-4 w3-center">
+            <img src="{{APIPATH}}/api/Users/GetimageByName?path={{RideHostDetails['Profile_pic']}}" width="80%" class="w3-circle"/>
+            <br/>
+            <h6><b>{{RideHostDetails['Fname']+" "+RideHostDetails['Lname']}}</b></h6>
+            <br/>
+            <span class="w3-small"></span>
+        </div>
+        <div class="col-md-8">
+           <div><b>&nbsp;&nbsp;Rating:</b>&nbsp;&nbsp;{{RatingOnHost}}/5</div>
+           <form #myRideHost="ngForm" (ngSubmit)="SubmitReviewOnHost()">
+              <span w3-right>
+                
+                       <div class="rating">
+                            <input type="radio" id="star5" name="rating" (change)="onRatingOne(5)"/><label for="star5" title="Rocks!">5 stars</label>
+                            <input type="radio" id="star4" name="rating" (change)="onRatingOne(4)"/><label for="star4" title="Pretty good">4 stars</label>
+                            <input type="radio" id="star3" name="rating" (change)="onRatingOne(3)"/><label for="star3" title="Meh">3 stars</label>
+                            <input type="radio" id="star2" name="rating" (change)="onRatingOne(2)"/><label for="star2" title="Kinda bad">2 stars</label>
+                            <input type="radio" id="star1" name="rating" (change)="onRatingOne(1)"/><label for="star1" title="Sucks big time">1 star</label>
+                       </div>
+                
+                  </span>
+              <br/><br/>
+              <label><b>&nbsp;&nbsp;Your Review:</b></label> 
+              <textarea pattern = "^[A-Za-z]{2}[ A-Za-z0-9+*!@#$%^&*.]{0,100}$" 
+                class="form-control" name="feedbackone" #feedbackone=ngModel [(ngModel)]="ReviewOnHost"
+                placeholder="Leave your review here..." [ngClass]="{ 'is-invalid': feedbackone.invalid && feedbackone.touched}" required
+              >
+              </textarea>
+                <div *ngIf="feedbackone.invalid && feedbackone.touched">
+                  <div *ngIf="feedbackone.invalid" class="text-danger">Please enter a valid comment!!</div> 
+                  <div *ngIf="feedbackone.errors.required" class="text-danger"></div>
+                </div> 
+              <br/>
+              <button class="w3-small w3-round w3-blue w3-btn" [disabled]="!myRideHost.valid" >SUBMIT</button>
+           </form>
+        </div>    
+      </div>  
+    </div>
+  </div>  
+</div>
+<br/><br/><br/><br/>
+<!--========================================End Of Main Content=========================================================-->
+<!--========================================Footer Called================================================================-->
+<app-footer></app-footer>
+<!--========================================End Of Footer Call===========================================================-->

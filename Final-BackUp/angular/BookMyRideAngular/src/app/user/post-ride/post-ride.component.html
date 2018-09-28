@@ -1,0 +1,131 @@
+<app-header></app-header>
+
+<div class="container w3-padding-64">
+  <h5 class="w3-padding w3-blue" style="margin-top:10px">Post Ride </h5>
+  <form  class="w3-card-2 w3-padding" #rideForm="ngForm" (ngSubmit)="submitForm()" style="margin-top:-10px">
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label><b>Start Time</b></label><span class="validation-error w3-small w3-text-red" *ngIf="(startTime.invalid && startTime.touched)">*Enter Valid Start Time..</span>
+            <input class="form-control"  
+                type="time" name="startTime"  #startTime="ngModel" placeholder="Start Time"   
+                [(ngModel)]="Postride.StartTime" required
+                [class.is-invalid]="startTime.invalid && startTime.touched"
+            />
+        </div>
+        <div class="form-group col-md-6">
+            <label><b>End Time</b></label><span class="validation-error w3-text-red w3-small" *ngIf="(endTime.invalid && endTime.touched)">* Enter Valid End Time...</span>
+            <input class="form-control"  
+                   type="time" name="endTime"  #endTime ="ngModel" placeholder="End Time"  
+                   [(ngModel)]="Postride.EndTime " required
+                   [class.is-invalid]="endTime.invalid && endTime.touched"
+            />
+        </div>
+        </div>
+        
+        <div class="form-row"> 
+            <div class="form-group col-md-6">
+                <label><b>Start Date</b></label><span class="validation-error w3-text-red w3-small" *ngIf="(startDate.invalid && startDate.touched)">*Enter Valid Start Date...</span>
+                <input type="date" 
+                    min="{{StartDate}}" max="{{2018-10-10}}" class="form-control" name="startDate" 
+                    #startDate="ngModel" placeholder="Start Date" [(ngModel)]="Postride.StartDate" required
+                    [class.is-invalid]="startDate.invalid && startDate.touched" (change)="datestart()"
+                    [disabled]="Postride.StartTime == undefined || Postride.EndTime == undefined"
+                />
+            </div>
+            <!--=======================================Start Point Location Input Field===================================-->
+            <div class="form-group col-md-6">
+                <p><b>Start Location</b></p>
+                <span class="validation-error w3-text-red w3-small" *ngIf="(startPointLocationId.invalid && startPointLocationId.touched)">*Enter Valid Start Location...</span>
+                <input (input)="startLocationInput()" autocomplete="off" class="form-control" type="text"
+                       name="startPointLocationId"  #startPointLocationId="ngModel" 
+                       placeholder="Search For Your Start Location"  [(ngModel)]="startingLocationInput" 
+                       required [class.is-invalid]="startPointLocationId.invalid && startPointLocationId.touched"
+                />
+                <div style="position:absolute;z-index:100;width:98%">
+                    <div class="autocomplete-items" id="startLocation_result_loading" style="display:none">
+                        <div class=" w3-card-4 w3-white w3-padding">
+                            <a style="background-color: white"><img src="../../assets/loading.gif" height="40px">Searching...</a>
+                        </div>
+                    </div>
+                    <div id="startLocation_result" class="w3-card-4"> 
+                        <div class="autocomplete-items" *ngFor="let chars of startLocation">
+                            <div class="form-control" (click)="setStartLocation(chars.Id,chars.Area,chars.Town)" id="start_location_suggetion_{{chars.Id}}">
+                                {{chars.Area+" , "+chars.Town+" , "+chars.District}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--=========================================End Time Input Field===================================-->
+        </div>
+        
+        <div class="form-row"> 
+            <div class="form-group col-md-6">
+            <label><b>End Date:</b></label> <span class="validation-error w3-small w3-text-red" *ngIf="(endDate.invalid && endDate.touched)">*Enter Valid End Date...</span>
+            <input type="date" min="{{Postride.StartDate}}" max="{{EndDateMax|date:'yyyy-MM-dd'}}"
+            class="form-control" name="endDate" #endDate="ngModel" placeholder="mm/dd/yyyy" 
+            [(ngModel)]="Postride.EndDate" required
+            [class.is-invalid]="endDate.invalid && endDate.touched" (change)="dateend()"
+            [disabled]="Postride.StartTime == undefined || Postride.EndTime == undefined || Postride.StartDate == undefined"
+            />
+            </div>
+        <!--=======================================End Point Location Input Field===================================-->
+        <div class="form-group col-md-6">
+            <p><b>End Location</b></p>
+            <span class="validation-error w3-text-red w3-small" *ngIf="(endPointLocationId.invalid && endPointLocationId.touched)">*Enter Valid End Location...</span>
+            <input (input)="endLocationInput()" autocomplete="off" class="form-control" type="text"
+                name="endPointLocationId"  #endPointLocationId="ngModel" 
+                placeholder="Search For Your End Location"  [(ngModel)]="endingLocationInput"
+                required [class.is-invalid]="endPointLocationId.invalid && endPointLocationId.touched"
+            />
+            <div style="position:absolute;z-index:100;width:98%">
+                <div class="autocomplete-items" id="endLocation_result_loading" style="display:none">
+                    <div class=" w3-card-4 w3-white w3-padding">
+                        <a style="background-color: white"><img src="../../assets/loading.gif" height="40px">Searching...</a>
+                    </div>
+                </div>
+                <div id="endLocation_result" class="w3-card-4"> 
+                    <div class="autocomplete-items" *ngFor="let chars of endLocation">
+                        <div class="form-control" (click)="setEndLocation(chars.Id,chars.Area,chars.Town)" id="end_location_suggetion_{{chars.Id}}">
+                            {{chars.Area+" , "+chars.Town+" , "+chars.District}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--=========================================End Point Location Input Field===================================-->
+        </div>
+        
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label><b>Seats Available</b></label>
+            <span class="validation-error w3-small w3-text-red" *ngIf="(totalSeatAvailable.invalid && totalSeatAvailable.touched)">*Enter  No. Of Seats Available...</span>
+            <input class="form-control" type="text"  pattern="^[1-9]*" 
+                   name="totalSeatAvailable"  #totalSeatAvailable="ngModel" 
+                   placeholder="Total Seats Available"  
+                   [(ngModel)]="Postride.TotalSeatAvailable" required minlength="1" maxlength="1" pattern="^[1-9]" 
+                   [class.is-invalid]="totalSeatAvailable.invalid && totalSeatAvailable.touched"
+            />
+        </div>
+        <div class="form-group col-md-6">
+            <label><b>Price Per Person</b></label>
+            <span class="validation-error w3-small w3-text-red" *ngIf="(priceForRide.invalid && priceForRide.touched)">* Enter a Valid Price...</span>
+            <input class="form-control"  type="text"  pattern="^[0-9]*" minlength="1" maxlength="4" 
+                name="priceForRide"  #priceForRide="ngModel" placeholder="Price Per Person"  
+                [(ngModel)]="Postride.PriceForRide" required
+                [class.is-invalid]="priceForRide.invalid && priceForRide.touched"
+            />
+        </div>
+        </div>
+        <div class="form-group w3-center">
+            <span class="w3-text-red" id="post_ride_error"></span>
+            <hr/>
+            <button  [disabled]="!rideForm.valid || isEndLocationPostRide || isStartLocationPostRide"  type="submit" class="w3-btn w3-blue">Submit</button>
+        </div>
+  
+  </form>
+  </div>
+
+  <app-footer></app-footer>
+  
+  

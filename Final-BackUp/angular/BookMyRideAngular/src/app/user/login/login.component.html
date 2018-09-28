@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+<!--atul 27-8-2018 -->
+
+<div class="container" style="padding-bottom:25px;margin-bottom:180px">
+  <div class="row w3-padding-64">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h5 class="w3-padding w3-blue">Login</h5>
+      <div class="w3-card-4 w3-padding" style="margin-top:-10px" id="login_div">
+
+        <form #myLoginForm="ngForm" (ngSubmit)="loginUser(myLoginForm)">
+
+          <div class="form-group">
+            <label>Email</label>
+            <span class="validation-error w3-small" style="text-align:center" *ngIf="(userEmail.invalid && userEmail.dirty && userPass.invalid && userPass.dirty && isSubmitted)">
+                 <span style="color:red">* Please enter a valid Email Id or Password</span>
+            </span>
+            <input type="email" name="user_email" [(ngModel)]="user.Email" #userEmail="ngModel" class="form-control" placeholder="Enter your Email id"
+              [class.is-invalid]="userEmail.invalid && userEmail.dirty && isSubmitted" pattern="[^\s]{1}[a-zA-Z0-9_]+(?:\.[a-zA-Z0-9_]+)*@[^-](?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?"
+              required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <!-- <span class="validation-error w3-small" style="text-align:center" *ngIf="(userPass.invalid && userPass.dirty && isSubmitted)">
+                  <span style="color:red">* Invalid Password</span>
+               </span> -->
+            <input type="{{flagShowPassword? 'password' : 'text' }}" autocomplete="off" id="myPass" name="user_pass" [(ngModel)]="user.Password" #userPass="ngModel"
+              class="form-control" placeholder="Enter your Password" [class.is-invalid]="userPass.invalid && userPass.dirty  && isSubmitted"
+              minlength="5" maxlength="15" pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.-^*()%!]).*$"
+              required />
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-6">
+                <span class="w3-small"><input type="checkbox" (click)="changePasswordInputType()">Show Password</span>
+              </div>
+              <div class="col-md-6">
+                <a class="w3-small" routerLink="/User/Forgot-Password">Forgot Password?</a>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" style="text-align:center">
+            <button type="submit" class="w3-btn w3-blue w3-round w3-small" [disabled]="!myLoginForm.valid">Submit</button>            &nbsp;&nbsp;
+            <button type="reset" class="w3-btn w3-pink w3-round w3-small">Reset</button>
+          </div>
+        </form>
+        <div class="row">
+          <div class="com-sm-1"></div>
+          <div class="col-sm-10">
+          <button style="margin-left:150px; margin-bottom:5px; background-color: tomato" class="btn w3-text-white btn-google col-6"
+            (click)="socialSignIn('google')"><i class="fa fa-google"></i> sign in with Google</button>
+          <button style="margin-left:150px; margin-top:5px;" class="btn w3-blue w3-text-white btn-google col-6" (click)="socialSignIn('facebook')"><i class="fa fa-facebook"></i> sign in with Facebook</button>
+          </div>
+          <div class="com-sm-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

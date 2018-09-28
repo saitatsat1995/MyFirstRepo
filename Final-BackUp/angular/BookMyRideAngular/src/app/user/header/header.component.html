@@ -1,0 +1,22 @@
+<div class="w3-container w3-padding w3-blue">
+  <ul class="nav nav-pills">
+       <li class="nav-item ">
+          <a routerLink="" style="color:white"><img src="../../assets/racing.png" height="50px"/><b>TrueRider</b></a>
+       </li>
+       <li class="nav-item w3-padding" *ngIf="UserId!=null">
+            <button class="nav-link w3-btn" routerLink="/User/Account"><i class="fa fa-user"></i>&nbsp;Account</button>
+        </li>
+       <li class="nav-item w3-padding" *ngIf="UserId==null && this.router.url!='/User/Login'">
+           <button class="nav-link w3-btn" routerLink="/User/Login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</button>
+       </li>
+       <li class="nav-item w3-padding" *ngIf="UserId==null && this.router.url!='/User/SignUp'">
+           <button class="nav-link w3-btn" routerLink="/User/SignUp"><i class="fa fa-user-plus"></i>&nbsp;Sign Up</button>
+       </li>
+       <li class="nav-item w3-padding" *ngIf="UserId!=null">
+        <button class="nav-link w3-btn" (click)="onLogout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;Logout</button>
+       </li>
+       <li class="nav-item w3-padding" *ngIf="UserRole=='ADMIN' && this.router.url!='/Admin/Dashboard'">
+         <button  class="nav-link w3-btn" routerLink="/Admin/Dashboard"><i class="fas fa-user-cog"></i>&nbsp;Admin</button>
+       </li>
+   </ul>
+</div> 

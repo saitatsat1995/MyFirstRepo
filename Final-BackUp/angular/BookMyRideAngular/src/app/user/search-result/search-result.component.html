@@ -1,0 +1,159 @@
+<!--========================================Header Called================================================================-->
+<app-header></app-header>
+<!--========================================End Of Header Call===========================================================-->
+<!--========================================Start Of Main Containt=======================================================-->
+<div style="background-color: gainsboro;margin:0">
+  <div style="padding:10px;width:100%;margin-left: auto;margin-right:auto;">
+    <div class="row">
+      <div class="col-md-4" style="margin-left:auto">
+        <input type="text" class="form-control" name="searchstart" [(ngModel)]="searchService.searchstart" (input)="getLocStart()"
+          placeholder="From">
+        <div style="position:absolute;z-index:100;width:100%">
+          <div class="autocomplete-items" *ngFor="let chars of searchService.ListOfStartLocations|filter: searchService.searchstart; let i=index">
+            <div id="start" class="form-control" style="width:88%;cursor: pointer" (mouseover)="searchService.hoverActiveStart[i]=true" (mouseleave)="searchService.hoverActiveStart[i]=false"
+              [ngStyle]="searchService.hoverActiveStart[i]?{'background-color': 'tomato'}:{}" (click)="selectStartLoc(chars)" *ngIf="searchService.selectedStart == 0">
+              <a style="background-color: white" (mouseover)="searchService.hoverActiveStart[i]=true" (mouseleave)="searchService.searchService.hoverActiveStart[i]=false"
+                [ngStyle]="searchService.hoverActiveStart[i]?{'background-color': 'tomato', 'color': 'white'}:{}">{{chars}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="w3-right"><img src="../../assets/arrow.png" height="30px" style="padding-top:5px"></span>
+      <div class="col-md-4">
+        <input type="text" class="form-control" name="search-street" [(ngModel)]="searchService.searchend" (input)="getLocEnd()"
+          placeholder="To">
+        <div style="position:absolute;z-index:100;width:100%">
+          <div class="autocomplete-items" *ngFor="let chars of searchService.ListOfEndLocations| filter: searchService.searchstart;let i=index">
+            <div class="form-control" style="width:88%; cursor: pointer;" (mouseover)="searchService.hoverActiveEnd[i]=true" (mouseleave)="searchService.hoverActiveEnd[i]=false"
+              [ngStyle]="searchService.hoverActiveEnd[i]?{'background-color': 'tomato'}:{}" (click)="selectEndLoc(chars)" *ngIf="searchService.selectedEnd == 0">
+              <a style="background-color: white" (mouseover)="searchService.hoverActiveEnd[i]=true" (mouseleave)="searchService.hoverActivEnd[i]=false"
+                [ngStyle]="searchService.hoverActiveEnd[i]?{'background-color': 'tomato', 'color': 'white'}:{}">{{chars}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2" style="margin-right:auto">
+        <button class="w3-btn w3-small w3-pink w3-block w3-round" [disabled]="!this.searchService.startbool || !this.searchService.endbool || this.searchService.searchstart.length ==0 || this.searchService.searchend.length == 0"
+          (click)="searchButton()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container">
+  <div class="row w3-padding-16">
+    <div class="col-md-3" style="margin-top:8px;margin-right:auto;margin-left:auto">
+      <div class="w3-card-4 w3-padding">
+        <br>
+        <h6 style="padding:5px"><b>Date:</b><button [disabled]="!this.searchService.startbool || !this.searchService.endbool || !this.searchService.isFilterOn" (click)="resetClick()" class="btn btn-primary" style="float:right"><i class="fa fa-undo"></i></button></h6>
+        <!-- <hr/> -->
+        <br>
+        <input type="date" [disabled]="!this.searchService.startbool || !this.searchService.endbool || !this.searchService.isFilterOn"
+          min="{{todayDate}}" onkeydown="return false" name="travel-date" class="form-control" id="" [(ngModel)]="travelDate" (change)="dateFilter()">
+        <br>
+        <!-- <div class="form-group">  -->
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-6">
+              <img src="../../assets/calendar.png" height="20px"><label>&nbsp;&nbsp;{{travelDate | date: 'shortDate'}}</label>
+            </div>
+          </div>
+        </div>
+
+        <hr><br>
+
+        <div>
+          <h6 style="padding:5px"><b>Sort by:</b></h6>
+          <br>
+          <!-- <div class="row"> -->
+          <div id="priceSort" style="margin-right:auto;margin-left:auto"><button class="btn btn-primary form-control" style="background-color:tomato" (click)="priceSort()" [disabled]="!this.searchService.startbool || !this.searchService.endbool || !this.searchService.isFilterOn">price&nbsp;&nbsp;&nbsp;&nbsp;<i style="padding-top: 5px" class="fa fa-sort-amount-desc fa-lg"></i></button></div>
+          <!-- <div class="col-5" style="margin-right: auto"><button class="btn btn-primary" (click)="departureSort()" [disabled]="!this.searchService.startbool || !this.searchService.endbool" >departure&nbsp;&nbsp;&nbsp;&nbsp;<i style="padding-top: 5px" class="fa fa-clock-o fa-lg"></i></button></div> -->
+          <!-- </div> -->
+        </div>
+        <br>
+        <hr>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="col-md-9 w3-padding" style="margin-right:auto;margin-left:auto">
+
+      <!--==========================================Search Result======================================================-->
+      <div style="margin-left:auto;margin-right: auto"  class="row" *ngIf="searchService.RideDummy.length == 0 && this.searchService.startbool && this.searchService.endbool && this.searchService.isFilterOn">
+        <p style="font-size: 20px"> Sorry, no rides are available</p>
+      </div>
+      <div class="w3-card-4 w3-padding" style="margin-top:5px" *ngFor="let item of searchService.RideDummy">
+        <div class="row">
+          <div class="col-md-3" style="text-align:center">
+            <img src="{{this.global.WebApiPath}}/api/Users/GetimageByName?path={{item.VechileImage}}" width="100%">
+            <b>{{item.VehicleNumber}}</b>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-5">
+                  <label>{{item.StartPointLocation}}</label></div>
+                  <div class="col-2"><img src="../../assets/arrow.png" height="20px"></div>
+                
+                <div class="col-5">
+                  <label>{{item.EndPointLocation}}</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-6">
+                  <img src="../../assets/calendar.png" height="20px"><label>&nbsp;&nbsp;{{item.StartDate}}</label>
+                </div>
+                <div class="col-6">
+                  <img src="../../assets/clock.png" height="20px"><label>&nbsp;&nbsp;{{item.StartTime}}</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-6">
+                  <h6><b>Rs.{{item.PriceForRide}}</b></h6>
+                </div>
+                <div class="col-6">
+                  <img src="../../assets/person.png" height="15px" /><span>&nbsp;&nbsp;{{item.VacantSeats}}</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3" style="text-align:center">
+            <img src="{{this.global.WebApiPath}}/api/Users/GetimageByName?path={{item.Profile_pic}}" class="w3-circle" width="70%">
+            <div class="row"><b style="margin-right:auto;margin-left:auto">{{item.Fname +" "+ item.Lname}}</b><br/></div>
+            <div class="row" style="padding-left:30px">
+
+              <div *ngFor="let s of starReview">
+                <div class="col-1" style="margin: 0;padding: 5px" *ngIf="s<=item.Rating">
+                  <img src="../../assets/star.png" height="15px" />
+                </div>
+                <div class="col-1" style="margin:0;padding: 5px" *ngIf="s>item.Rating">
+                  <img src="../../assets/star-yellow.png" height="15px" />
+                </div>
+              </div>
+            </div>
+            <hr/>
+            <button class="w3-btn w3-blue w3-round" [id]="item.Id" (click)="requestRide(item.Id,item.RideHostId)">Request</button>
+          </div>
+        </div>
+      </div>
+      <!--==========================================Search Result======================================================-->
+      <!--==========================================Search Result======================================================-->
+
+
+
+    </div>
+
+  </div>
+</div>
+<!--=================================================End of contact Us====================================================-->
+<!--========================================End Of Main Content=========================================================-->
+<!--========================================Footer Called================================================================-->
+<app-footer></app-footer>
+<!--========================================End Of Footer Call===========================================================-->

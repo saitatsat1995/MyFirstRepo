@@ -1,0 +1,130 @@
+<app-header></app-header>
+<h2 class="w3-padding w3-black w3-center" style="margin-top:-10px">Feedbacks</h2>
+<div class="container" *ngIf="feedback!=null">
+  <div class="w3-container w3-padding" *ngFor="let res of feedback | paginate: { itemsPerPage: 10, currentPage: p }">
+  <div class="row w3-card-4">
+    <div class="col-md-4 w3-center">
+        <h4><b>Feedback By</b></h4>
+        <img src="{{APIPATH}}/api/Users/GetimageByName?path={{res.gProfile_pic}}" width="30%" class="w3-circle"/>
+        <br/>
+        <span *ngFor="let temp of startRating">
+            <span *ngIf="res.gRating>=temp">
+               <img src="../../assets/star.png" height="20px"/>
+            </span> 
+            <span *ngIf="res.gRating<temp">
+               <img src="../../assets/star-yellow.png" height="20px"/>
+            </span>
+        </span>
+        <hr/>
+        <h5>{{res.gFname+" "+res.gLname}}</h5>
+        <h6>{{res.gEmail}}</h6>
+        <h6>{{res.gMobile}}</h6>
+    </div>
+    <div class="col-md-4 w3-center w3-padding-16">
+        <span *ngFor="let temp of startRating">
+            <span *ngIf="res.reviewRating>=temp">
+               <img src="../../assets/star.png" height="20px"/>
+            </span> 
+            <span *ngIf="res.reviewRating<temp">
+               <img src="../../assets/star-yellow.png" height="20px"/>
+            </span>
+        </span>
+        <span *ngIf="res.reviewRating!=null">
+          {{res.reviewRating}}/5
+        </span>
+        <span *ngIf="res.reviewRating==null">
+          0/5
+        </span>
+        <hr/>
+        <div class="w3-round" style="width:100%;overflow-x: scroll;padding:20px;border:1px solid #ccc">
+          {{res.reviews}}
+        </div>
+        <hr/>
+        <button class="w3-small w3-round w3-green w3-btn" (click)="EditFeedbacks(res.Fid)">Edit</button>
+        &nbsp;&nbsp;
+        <button class="w3-small w3-round w3-red w3-btn" (click)="DeleteFeedback(res.Fid)" >Delete</button>
+    </div>
+    <div class="col-md-4 w3-center">
+        <h4><b>Feedback For</b></h4>
+        <img src="{{APIPATH}}/api/Users/GetimageByName?path={{res.rProfile_pic}}" width="30%" class="w3-circle"/>
+        <br/>
+        <span *ngFor="let temp of startRating">
+            <span *ngIf="res.rRating>=temp">
+               <img src="../../assets/star.png" height="20px"/>
+            </span> 
+            <span *ngIf="res.rRating<temp">
+               <img src="../../assets/star-yellow.png" height="20px"/>
+            </span>
+        </span>
+        <hr/>
+        <h5>{{res.rFname+" "+res.rLname}}</h5>
+        <h6>{{res.rEmail}}</h6>
+        <h6>{{res.rMobile}}</h6>          
+    </div>
+  </div>
+  </div>
+  <pagination-controls (pageChange)="p=$event"></pagination-controls>  
+</div>  
+<div class="w3-modal" id="feedbackEditModal">
+ <div class="w3-modal-content">
+  <h5 class="w3-blue w3-padding">Edit Your Feedback<span class="w3-right w3-text-red" (click)="closeEdit()"><b>&times;</b></span></h5>
+  <div class="w3-cord-4 w3-padding">
+    <!--==========================================Start Of Feedback==============================================================-->
+    <div class="w3-padding-16"  *ngIf="editFeedback!=null">
+      <form #UpdatedFeedbackData="ngForm"  (ngSubmit)="UpdateFeedbacks();UpdatedFeedbackData.reset()"> 
+        <div class="row">
+            <div class="col-md-4 w3-center">
+                <h4><b>Feedback By</b></h4>
+                <img src="{{APIPATH}}/api/Users/GetimageByName?path={{editFeedback[0].gProfile_pic}}" width="30%" class="w3-circle"/>
+                <br/>
+                <span *ngFor="let temp of startRating">
+                    <span *ngIf="editFeedback[0].gRating>=temp">
+                       <img src="../../assets/star.png" height="20px"/>
+                    </span> 
+                    <span *ngIf="editFeedback[0].gRating<temp">
+                       <img src="../../assets/star-yellow.png" height="20px"/>
+                    </span>
+                </span>
+                <hr/>
+                <h5>{{editFeedback[0].gFname+" "+editFeedback[0].gLname}}</h5>
+                <h6>{{editFeedback[0].gEmail}}</h6>
+                <h6>{{editFeedback[0].gMobile}}</h6>
+            </div>
+            <div class="col-md-4 w3-center">
+                <h5 class="w3-left"><b>Review:</b></h5>
+                <textarea class="form-control" minlength="0" maxlength="200" name="reviews" [(ngModel)]="editFeedback.reviews" #reviews="ngModel" maxlength="200" 
+                [class.is-invalid]="reviews.invalid  && reviews.touched" 
+                required>
+                </textarea>
+                <div *ngIf="reviews.invalid &&reviews.touched">
+                        <div *ngIf="reviews.invalid" class="text-danger">*Your comment should be between 0 to 200 charecters...</div> 
+                        <div *ngIf="reviews.errors.required" class="text-danger"></div>
+                </div> 
+                <hr/>
+                <button class="w3-small w3-round w3-blue w3-btn" [disabled]="!UpdatedFeedbackData.valid" >UPDATE</button>
+            </div>
+            <div class="col-md-4 w3-center">
+                <h4><b>Feedback For</b></h4>
+                <img src="{{APIPATH}}/api/Users/GetimageByName?path={{editFeedback[0].rProfile_pic}}" width="30%" class="w3-circle"/>
+                <br/>
+                <span *ngFor="let temp of startRating">
+                    <span *ngIf="editFeedback[0].rRating>=temp">
+                       <img src="../../assets/star.png" height="20px"/>
+                    </span> 
+                    <span *ngIf="editFeedback[0].rRating<temp">
+                       <img src="../../assets/star-yellow.png" height="20px"/>
+                    </span>
+                </span>
+                <hr/>
+                <h5>{{editFeedback[0].rFname+" "+editFeedback[0].rLname}}</h5>
+                <h6>{{editFeedback[0].rEmail}}</h6>
+                <h6>{{editFeedback[0].rMobile}}</h6>          
+            </div>
+         </div>
+      </form>
+   </div> 
+    <!--==========================================End Of Feedback===============================================================-->  
+  </div>  
+  </div>  
+</div>  
+<app-footer></app-footer>

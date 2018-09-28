@@ -1,0 +1,168 @@
+<!--  DATE-28/08/2018   Author: RISHABH KUMAR THAKUR
+    This code is used for creation of Sign-up Screen.
+    User Have to enter the required fields to register themselves as a user to BookMyRide.
+    #myForm is used to get the various datas of the form, so that the datas can be processed further.
+    On Submitting The Form the "registerUser()" is called which will save the data.
+
+ -->
+ <!--========================================Header Called================================================================-->
+ <app-header ></app-header>
+ 
+ <!--========================================End Of Header Call===========================================================-->
+ 
+<!--=======================================START of the HTML(Sign-UP form)================================================-->
+
+ <div class="container w3-padding-32">
+   <h6 class="w3-blue w3-padding-16 " style="text-align:center"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<b>Sign-Up</b></h6>
+  
+   <div class=" w3-container w3-card-4 w3-padding" style="margin-top:-10px"> 
+   <form #myForm="ngForm" (ngSubmit)="registerUser(this)"> 
+      
+    <p style="color:red; font:smaller">* marked fields are compulsory</p>
+       <div class="row">
+       <div class="col-md-6">
+           <div class="row">
+             <!--First Name-->
+               <div class="form-group col-md-6">
+                   <label><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;First Name:<span style="color:red">*</span></label>
+                   <input type="text" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_fname" [(ngModel)]="user.Fname" #userfName="ngModel"  placeholder="Enter your First name..." 
+                   class="form-control" [class.is-invalid]="userfName.invalid && userfName.dirty"  maxlength="15" pattern="^[a-zA-Z]*"/>
+                   <div class="validation-error"  *ngIf="(userfName.invalid && userfName.dirty)"><span style="color:red;font-size:13px">> Enter between (2-15) characters.<br>> Should be only letters. </span></div>
+                   
+               </div> 
+ 
+               <!--Last Name-->
+               <div class="form-group col-md-6">
+                   <label><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Last Name:<span style="color:red">*</span></label>
+                   <input type="text" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_lname" [(ngModel)]="user.Lname" #userlName="ngModel"  placeholder="Enter your Last name..." 
+                    class="form-control" [class.is-invalid]="userlName.invalid && userlName.dirty"    maxlength="15" pattern="^[a-zA-Z]*"/>
+                    <div class="validation-error" *ngIf="(userlName.invalid && userlName.dirty)"><span style="color:red;font-size:13px">> Enter between (1-20) characters.<br>> Should be only letters.</span></div>
+               </div>
+           </div> 
+ 
+           <!--Email-->
+           <div class="form-group">
+               <label><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Email:<span style="color:red">*</span></label>
+               <input type="email" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_email" [(ngModel)]="user.Email" #userEmail="ngModel"  placeholder="Enter your Email..." 
+               class="form-control"  [class.is-invalid]="userEmail.invalid  && userEmail.dirty"minlength="12" maxlength="30" 
+               pattern="[^\s]{1}[a-zA-Z0-9_]+(?:\.[a-zA-Z0-9_]+)*@[^-](?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?"
+               />
+               <div class="validation-error" style="text-align:center" *ngIf="(userEmail.invalid && userEmail.dirty)"><span style="color:red;font-size:13px">> Enter correct e-mail format.</span></div>
+               
+           </div>
+ 
+           <!--Contact Number-->
+           <div class="form-group">
+               <label><i class="fa fa-address-card" aria-hidden="true"></i>&nbsp;Contact Number:<span style="color:red">*</span></label>
+               <input type="text" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_num" [(ngModel)]="user.Mobile" #userNum="ngModel"  placeholder="Enter your Contact Number..." 
+               class="form-control"   minlength="10" maxlength="10" [class.is-invalid]="userNum.invalid  && userNum.dirty" pattern="^[0-9]*"/>
+               <div class="validation-error" style="text-align:center" *ngIf="(userNum.invalid && userNum.dirty)"><span style="color:red;font-size:13px">> Enter only digits (0-9).</span></div>
+           </div>
+ 
+           <!--Date Of Birth-->
+           <div class="form-group">
+               <label><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>&nbsp;<i class="fa fa-child" aria-hidden="true"></i>&nbsp;Date Of Birth:<span style="color:red">*</span></label>
+               <input type="date" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_dob" [(ngModel)]="user.Dob" #userDob="ngModel"  placeholder="Enter your Date Of Birth..." 
+               class="form-control" [class.is-invalid]="userDob.invalid && userDob.dirty" max="2000-08-04" min="1950-01-01"/>
+               <div class="validation-error" style="text-align:center" *ngIf="(userDob.invalid && userDob.dirty)"><span style="color:red;font-size:13px">> Enter in month/date/year format.</span></div>
+           </div>
+ 
+           <!--Gender-->
+           <div class="form-group">
+               <label><i class="fa fa-male" aria-hidden="true"></i>&nbsp;<b>/</b><i class="fa fa-female" aria-hidden="true"></i>&nbsp;Gender:<span style="color:red">*</span></label><br/>
+               <input type="radio" name="gender" required [(ngModel)]="user.Gender" #userGender="ngModel" [class.is-invalid]="userGender.invalid && userGender.dirty" value="Male"/>Male
+               <input type="radio" name="gender" required [(ngModel)]="user.Gender" #userGender="ngModel" [class.is-invalid]="userGender.invalid && userGender.dirty" value="Fe-male"/>Female
+               
+           </div>
+ 
+           <!--Address-->
+           <div class="form-group">
+                   <label><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Address:<span style="color:red">*</span></label>
+                   <input type="text" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_address" [(ngModel)]="user.Address" #userAddress="ngModel"  placeholder="Enter your Address..." 
+                   class="form-control" [class.is-invalid]="userAddress.invalid && userAddress.dirty" minlength="5" maxlength="200"
+                   pattern="^[^\s][\w\s-\s\\[\\{\]\\}`~!@#$%^&*()_'+=<>:;/.,?]+[^\s]$"/>
+                   <div class="validation-error"   *ngIf="(userAddress.invalid && userAddress.dirty)"><span style="color:red;font-size:13px">> Enter between (5-200) letters.</span></div>
+           </div>
+       </div>
+       <div class="col-md-6">
+ 
+         <!--City-->
+           <div class="form-group">
+               <label><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;City:<span style="color:red">*</span></label>
+               <input type="text" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_city" [(ngModel)]="user.City" #userCity="ngModel"  placeholder="Enter your City..." 
+               class="form-control" [class.is-invalid]="userCity.invalid && userCity.dirty" minlength="3" maxlength="25" pattern="^[^\s-&][A-Za-z\s-&]*[^\s-&]"/>
+               <div class="validation-error"  style="text-align:center" *ngIf="(userCity.invalid && userCity.dirty)"><span style="color:red;font-size:13px">> Enter between (3-25) characters.<br>> Must be only characters.</span></div>
+           </div>
+ 
+           <!--State-->
+           <div class="form-group">
+               <label><i class="fa fa-university" aria-hidden="true"></i>&nbsp;State:<span style="color:red">*</span></label>
+               <input type="text" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_state" [(ngModel)]="user.State" #userState="ngModel"  placeholder="Enter your State..." 
+               class="form-control"  [class.is-invalid]="userState.invalid && userState.dirty" minlength="3" maxlength="17" pattern="^[^\s][A-Za-z\s]*[^\s]"/>
+               <div class="validation-error" style="text-align:center"  *ngIf="(userState.invalid && userState.dirty)"><span style="color:red;font-size:13px">> Enter between (3-17) characters.<br>> Must be only characters.</span></div>
+           </div> 
+ 
+           <!--Country-->
+           <div class="form-group">
+               <label><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;Country:<span style="color:red">*</span></label>
+               <input type="text" style="background-color:#FFFFE0;color:black;font:italic;"  name="user_country" [(ngModel)]="user.Country"
+                #userCountry="ngModel"  class="form-control" placeholder="INDIA"  value="INDIA" readonly/>
+               
+           </div>
+ 
+           <!--Pin Code-->
+           <div class="form-group">
+                <label><i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp;PinCode:<span style="color:red">*</span></label>
+                <input type="text"  style="background-color:#FFFFE0;color:black;font:italic;" required name="user_pin" [(ngModel)]="user.Pincode" #userPin="ngModel"  placeholder="Enter your Pincode..." 
+                class="form-control" [class.is-invalid]="userPin.invalid && userPin.dirty" minlength="6" maxlength="6" pattern="^[0-9]*"/>
+                <div class="validation-error" style="text-align:center"  *ngIf="(userPin.invalid && userPin.dirty)"><span style="color:red;font-size:13px">> Enter only Digits (0-9).<br>> Should be of 6 Digits.</span></div>
+           </div>
+ 
+           <!--Password-->
+           <div class="form-group">
+            <label for="user_pass"><i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Password:<span style="color:red">*</span></label>
+            <input type="password" style="background-color:#FFFFE0;color:black;font:italic;" id="user_pass" required name="user_pass" [(ngModel)]="user.Password" #userPass="ngModel"  placeholder="Enter your Password..." 
+            class="form-control" [class.is-invalid]="userPass.invalid && userPass.dirty" minlength="8" maxlength="15"  pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.-^*()%!]).*$"/>
+            <div class="validation-error" oncopy="return false" onpaste="return false" style="text-align:center" *ngIf="( userPass.dirty &&  userPass.invalid )"><span style="color:red;font-size:13px">> Must contain at least:One number,One uppercase,lowercase letter,One Special character and, at least 8 or more characters</span></div>
+    </div>
+
+    <!--Confirm Password-->
+    <div class="form-group">
+            <label for="user_cpass"><i class="fa fa-key" aria-hidden="true"></i>&nbsp;Confirm-Password:<span style="color:red">*</span></label>
+            <input type="password" id="user_cpass" style="background-color:#FFFFE0;color:black;font:italic;" required name="user_cpass" [(ngModel)]="cpassword" #userCpass="ngModel"  placeholder="Enter your Password Again..." 
+            class="form-control" [class.is-invalid]="(userCpass.dirty  && userCpass.invalid)"  minlength="8" maxlength="15"  pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.-^*()%!]).*$"/>
+            <div class="validation-error"   oncopy="return false" onpaste="return false" style="text-align:center" *ngIf="(userPass.value!=userCpass.value) && (userCpass.dirty  && userCpass.invalid)"><span style="color:red;font-size:13px">re-enter same password</span></div>
+            
+          
+       </div>
+
+ 
+           <!--Submit Button-->
+           <div class="form-group">
+               <div class="row">
+                 <div class="col-md-8">
+                  <label>Refferal Code:</label>   
+                  <input type="text" class="form-control" style="background-color:#FFFFE0;color:black;font:italic;" placeholder="Have a refferal Code??"
+                    name="refferal_code" [(ngModel)]="user.Role" #refferalCode="ngModel"
+                    class="form-control" [class.is-invalid]="(refferalCode.dirty  && refferalCode.invalid)"  minlength="0" maxlength="8"  
+                    pattern="^[A-Za-z0-9 ]*"
+                  />
+                 </div>  
+                 <div class="col-md-4" style="padding-top:27px"> 
+                  <button class="w3-btn w3-blue w3-round" [disabled]="!myForm.valid || userPass.value!=userCpass.value">Submit</button>
+                 </div>   
+               </div>
+           </div>
+       </div>
+       </div> 
+   </form>
+ </div>
+ </div>
+ 
+ 
+ 
+ <!--======================================= END of the HTML (Sign-UP form)===============================================-->
+ 
+ <!--========================================Footer Called================================================================-->
+ <app-footer></app-footer>
+ <!--========================================End Of Footer Call===========================================================-->
