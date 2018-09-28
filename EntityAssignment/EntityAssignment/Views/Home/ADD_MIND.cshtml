@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "ADD_MIND";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container" style="margin-top:100px">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-3">
+            <h5 style="padding:10px;background-color:#0026ff;color:#ffffff"><b><center>ADD MINDS</center></h5>
+            <form method="POST" action="/Home/add_minds_server">
+                <div class="form-group">
+                    <label>MID</label>
+                    <input type="number" class="form-control" name="mid" placeholder="Enter Track ID" />
+                </div>
+                <div class="form-group">
+                    <label>NAME</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Track Name" />
+                </div>
+                <div class="form-group">
+                    <label>GENDER</label>
+                    <input type="text" class="form-control" name="gender" placeholder="Enter Track Name" />
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" class="form-control" name="ph" placeholder="Enter Track Name" />
+                </div>
+                <div class="form-group">
+                    <label>Track</label>
+                    <select name="trackId" class="form-control">
+                        <option>Select Track ID</option>
+                        @foreach (var i in ViewBag.trackList)
+                        {
+                          <option value="@Html.Encode(i.Track_ID)">@Html.Encode(i.Track_Name) || @Html.Encode(i.LeadName)</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <center><button class="btn btn-primary">ADD</button></center>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+

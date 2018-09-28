@@ -1,0 +1,9 @@
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\bin\Debug\BookStore.Entities.dll.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\bin\Debug\BookStore.Entities.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\bin\Debug\BookStore.Entities.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\bin\Debug\EntityFramework.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\bin\Debug\EntityFramework.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\obj\Debug\BookStore.Entities.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.Entities\obj\Debug\BookStore.Entities.pdb

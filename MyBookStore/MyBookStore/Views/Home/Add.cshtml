@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="w3-container" style="background: url(../../Content/images/bg1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;padding-top:100px;padding-bottom:200px">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h5 class="w3-padding w3-teal">ADD BOOK</h5>
+            <div class="container w-border">
+                <form method="post" action="/Home/add_data"  enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="book_title" class="w3-text-white">Title</label>
+                                <input type="text" name="book_title" class="form-control" placeholder="Enter the book Title..." required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="book_author" class="w3-text-white">Author</label>
+                                <input type="text" name="book_author" class="form-control" placeholder="Enter the book Author Name..." required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="book_location" class="w3-text-white">Location</label>
+                                <input type="text" name="book_location" class="form-control" placeholder="Enter the book Location..." required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="book_category" class="w3-text-white">Category</label>
+                                <input type="text" name="book_category" class="form-control" placeholder="Enter the book Caegory..." required/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="book_pages" class="w3-text-white">Pages</label>
+                                <input type="number" name="book_pages" class="form-control" placeholder="Enter the book pages..." required />
+                            </div>
+                            <div class="form-group">
+                                <label for="book_tags" class="w3-text-white">Tags</label>
+                                <input type="text" name="book_tags" class="form-control" placeholder="Enter the book Tags..." required />
+                            </div>
+                            <div class="form-group">
+                                <label for="book_tags" class="w3-text-white">Select Image</label>
+f                                <input type="file" name="fileBase" class="form-control" placeholder="Enter the book Tags..." required />
+                            </div>
+                            <div class="form-group">
+                                <button class="w3-padding w3-pink w3-round w3-btn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            <h5 class="w3-padding w3-teal">www.bookCorner.com</h5>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

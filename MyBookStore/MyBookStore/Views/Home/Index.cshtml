@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="" style="max-width:100%;">
+    <img class="mySlides" src="~/Content/images/330109.jpg" style="width:100%;height:700px">
+    <img class="mySlides" src="~/Content/images/346199.jpg" style="width:100%;height:700px">
+    <img class="mySlides" src="~/Content/images/421124.jpg" style="width:100%;height:700px">
+    <img class="mySlides" src="~/Content/images/424848.jpg" style="width:100%;height:700px">
+    <div class="w3-display-middle">   
+       <h5>
+           <form method="GET" action="/Home/Search">
+             <input type="text" name="Query" id="query" placeholder="Search a product..." style="width:700px;height:35px;padding:5px;border-radius:5px;" autocomplete="off"/>
+             <button class="w3-btn w3-green w3-round" style="margin-top:-5px">Search</button>
+           </form>
+       </h5>
+       <div id="search_result" style="position:absolute;z-index:100;margin-top:-10px" class="w3-white">
+
+       </div>
+       <center>
+           <button class="w3-btn w3-pink w3-round">@Html.ActionLink("ADD", "Add", "Home")</button>
+           <button class="w3-btn w3-blue w3-round">@Html.ActionLink("FAVOURITE", "FAV", "Home")</button>
+           <button class="w3-btn w3-pink w3-round">@Html.ActionLink("ALL", "ALL", "Home")</button>
+           <button class="w3-btn w3-pink w3-round">@Html.ActionLink("ALL CHECKBOX", "ALL_CHECKBOX", "Home")</button>
+       </center>
+    </div>
+</div>
+
+<script>
+var myIndex = 0;
+               carousel();
+
+               function carousel() {
+                   var i;
+                   var x = document.getElementsByClassName("mySlides");
+                   for (i = 0; i < x.length; i++) {
+                       x[i].style.display = "none";
+                   }
+                   myIndex++;
+                   if (myIndex > x.length) {myIndex = 1}
+                   x[myIndex-1].style.display = "block";
+                   setTimeout(carousel, 2000); // Change image every 2 seconds
+               }
+</script>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KalingaRoomsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="kalingaRoom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="room_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="blook" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="floor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="beds" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mind">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="track" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="room_id" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="KalingaRoomsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="kalingaRooms" EntityType="Self.kalingaRoom" />
+    <EntitySet Name="minds" EntityType="Self.mind" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,17 @@
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\Demo.DataAccessLayer.dll.config
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\Demo.DataAccessLayer.dll
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\Demo.DataAccessLayer.pdb
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\Demo.EntityLayer.dll
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\EntityFramework.dll
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\Demo.EntityLayer.pdb
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\Demo.EntityLayer.dll.config
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\EntityFramework.xml
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\obj\Debug\Demo.DataAccessLayer.csprojAssemblyReference.cache
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\obj\Debug\Demo.DataAccessLayer.csproj.CoreCompileInputs.cache
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\obj\Debug\Demo.DataAccessLayer.csproj.CopyComplete
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\obj\Debug\Demo.DataAccessLayer.dll
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\obj\Debug\Demo.DataAccessLayer.pdb
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\obj\Debug\Demo.DataAccessLayer.Migrations.sai.resources
+c:\Users\M1046896\source\repos\Demo\Demo.DataAccessLayer\obj\Debug\Demo.DataAccessLayer.csproj.GenerateResource.cache

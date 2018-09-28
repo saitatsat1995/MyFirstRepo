@@ -1,0 +1,11 @@
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\bin\Debug\netcoreapp2.0\CoreCapabilityProject.deps.json
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\bin\Debug\netcoreapp2.0\CoreCapabilityProject.runtimeconfig.json
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\bin\Debug\netcoreapp2.0\CoreCapabilityProject.runtimeconfig.dev.json
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\bin\Debug\netcoreapp2.0\CoreCapabilityProject.dll
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\obj\Debug\netcoreapp2.0\CoreCapabilityProject.csprojAssemblyReference.cache
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\obj\Debug\netcoreapp2.0\CoreCapabilityProject.csproj.CoreCompileInputs.cache
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\obj\Debug\netcoreapp2.0\CoreCapabilityProject.AssemblyInfoInputs.cache
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\obj\Debug\netcoreapp2.0\CoreCapabilityProject.AssemblyInfo.cs
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\bin\Debug\netcoreapp2.0\CoreCapabilityProject.pdb
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\obj\Debug\netcoreapp2.0\CoreCapabilityProject.dll
+C:\Users\M1046896\source\repos\CoreCapabilityProject\CoreCapabilityProject\obj\Debug\netcoreapp2.0\CoreCapabilityProject.pdb

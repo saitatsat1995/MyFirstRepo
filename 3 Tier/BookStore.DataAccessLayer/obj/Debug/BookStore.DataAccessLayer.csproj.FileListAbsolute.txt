@@ -1,0 +1,30 @@
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\BookStore.DataAccessLayer.dll.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\BookStore.DataAccessLayer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\BookStore.DataAccessLayer.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\BookStore.Entities.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\BookStore.Entities.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\BookStore.Entities.dll.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.Migrations.bookdet.resources
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.csproj.GenerateResource.Cache
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.pdb
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\BookStore.DataAccessLayer.dll.config
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\BookStore.DataAccessLayer.dll
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\BookStore.DataAccessLayer.pdb
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\BookStore.Entities.dll
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\BookStore.Entities.pdb
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\BookStore.Entities.dll.config
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.csproj.CopyComplete
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.dll
+C:\Users\M1046896\source\repos\3 Tier\BookStore.DataAccessLayer\obj\Debug\BookStore.DataAccessLayer.pdb

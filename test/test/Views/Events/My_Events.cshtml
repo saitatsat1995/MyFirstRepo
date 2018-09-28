@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "My_Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 w3-padding-64">
+            <table class="w3-table-all">
+                <tr>
+                    <th>Title</th>
+                    <th>Start Date</th>
+                    <th>Duration</th>
+                    <th>Description</th>
+                    <th>Locaion</th>
+                    <th>Is Public ??</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                @foreach( var e in ViewBag.EventDetails) {
+                  <tr>
+                    <td>@e.title</td>
+                    <td>@e.startDateTime</td>
+                    <td>@e.duration</td>
+                    <td>@e.description</td>
+                    <td>@e.location</td>
+                    <td>
+                        @if (e.isPublic == 1)
+                        {
+                            @Html.Encode("Yes") 
+                        }
+                        else
+                        { @Html.Encode("No")}
+                    </td>
+                    <td>
+                        <form method="POST" action="/Events/Edit">
+                            <input type="hidden" name="Event_ID" value="@e.id" />
+                            <input type="submit" name="Edit" value="Edit" class="w3-btn w3-green w3-small" />
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="/Events/Delete">
+                            <input type="hidden" name="Event_ID" value="@e.id" />
+                            <input type="submit" name="Delete" value="Delete" class="w3-btn w3-pink w3-small" />
+                        </form>
+                    </td>
+                  </tr>
+                 }
+            </table>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+

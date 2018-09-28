@@ -1,0 +1,11 @@
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\bin\Debug\netcoreapp2.0\testWebCore.deps.json
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\bin\Debug\netcoreapp2.0\testWebCore.runtimeconfig.json
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\bin\Debug\netcoreapp2.0\testWebCore.runtimeconfig.dev.json
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\bin\Debug\netcoreapp2.0\testWebCore.dll
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\bin\Debug\netcoreapp2.0\testWebCore.pdb
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\obj\Debug\netcoreapp2.0\testWebCore.csprojAssemblyReference.cache
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\obj\Debug\netcoreapp2.0\testWebCore.csproj.CoreCompileInputs.cache
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\obj\Debug\netcoreapp2.0\testWebCore.AssemblyInfoInputs.cache
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\obj\Debug\netcoreapp2.0\testWebCore.AssemblyInfo.cs
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\obj\Debug\netcoreapp2.0\testWebCore.dll
+C:\Users\M1046896\source\repos\testWebCore\testWebCore\obj\Debug\netcoreapp2.0\testWebCore.pdb

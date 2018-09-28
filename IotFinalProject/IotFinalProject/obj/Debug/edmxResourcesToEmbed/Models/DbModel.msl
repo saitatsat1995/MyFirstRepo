@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IotFinalProjectModelStoreContainer" CdmEntityContainer="IotFinalProjectEntities">
+    <EntitySetMapping Name="DeviceLogs">
+      <EntityTypeMapping TypeName="IotFinalProjectModel.DeviceLog">
+        <MappingFragment StoreEntitySet="DeviceLog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="device_name" ColumnName="device_name" />
+          <ScalarProperty Name="device_status" ColumnName="device_status" />
+          <ScalarProperty Name="device_value" ColumnName="device_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SensorLogs">
+      <EntityTypeMapping TypeName="IotFinalProjectModel.SensorLog">
+        <MappingFragment StoreEntitySet="SensorLog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sensor_status" ColumnName="sensor_status" />
+          <ScalarProperty Name="sensor_value" ColumnName="sensor_value" />
+          <ScalarProperty Name="sensor_data" ColumnName="sensor_data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<BookStore.Entities.BookDetails>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New","Create")
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tags)
+        </th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.Book_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Book_Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Pages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Tags)
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.Book_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Book_Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Pages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Tags)
+            </td>
+        </tr>
+    }
+
+</table>

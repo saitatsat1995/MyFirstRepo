@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="w3-blue w3-padding">About This Project:</h3>
+            <div class="w3-card-4 w3-padding" style="margin-top:-10px">
+                <p>
+                    All the fields are required fields.<br/>
+                    <span class="w3-text-red w3-small">Note: For all the validations, use DataAnnotation feature. These are called model validations.</span>
+                    <ol>
+                        <li>
+                            create the “New Event“ form. The easiest way to start is by using the Razor view generator in Visual Studio. Create a folder “\Views\Events“ and under Events folder create a view named “Create” for event creation.
+                            In the Create form
+                        </li>
+                        <li>Title should be ‘Create Event’</li>
+                        <li>Remove “Back to List” link.</li>
+                        <li>Add [Cancel] link to “My Events”, just after the [Create] button</li>
+                    </ol>
+                    <span class="w3-text-red w3-small"><br/>
+                        Note: Analyse the view that has been created for event creation, analyse what are the lines of code has been auto generated. 
+                    </span>
+                    <br/>
+                    <ol>
+                        <li>After creating the ‘Create’ view, create Event controller, there need to incorporate create, edit, delete logic.</li>
+                        <li>For Creating events, use [HttpPost] attribute.</li>
+                        <li>For editing events, use [HttpPut] attribute.</li>
+                        <li>To delete the event use [HttpDelete] attribute.</li>
+                        <li>To retrieve the added events data, use [HttpGet] attribute.</li>
+                        <li>After creating events, page should be redirected to other page where user can see the added events details and can edit/delete the events.</li>
+                        <li>For passing the data, Viewbag/viewdata/tempdata must be used.</li>
+                        <li>To display, edit, delete create corresponding actions and view named “My Events”.</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="w3-card-4 w3-padding w3-padding-64" style="margin-top:10px">
+                <center>
+                    <button class="w3-btn w3-round w3-pink" onclick="create_event">@Html.ActionLink("Create Event", "Creat_Event","Events")</button>
+                    <button class="w3-btn w3-round w3-blue" onclick="my_events">@Html.ActionLink("Events", "My_Events", "Events")</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>

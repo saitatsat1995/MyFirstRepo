@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "edit_assign_room";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="w3-container">
+  <div class="row">
+      <div class="col-md-9">
+          <div class="row">
+              @foreach (var i in ViewBag.mindList)
+              {
+                  <div class="col-md-4 w3-padding">
+                      <div class="w3-card-2">
+                          <img src="~/Content/images/@Html.Encode(i.img)" style="height:300px;width:100%" />
+                          <div class="w3-padding w3-center"><b>@Html.Encode(i.name)</b></div>
+                          <div class="w3-padding w3-small w3-center">@Html.Encode(i.mid)</div>
+                          <div class="w3-padding w3-small w3-center">@Html.Encode(i.track)</div>
+                          <div class="w3-padding w3-small w3-center">
+                              <form method="POST" action="/Home/remove_mind_from_room">
+                                  <input type="hidden" name="mind_id" value="@Html.Encode(i.id)">
+                                  <input type="hidden" name="room_id" value="@Html.Encode(ViewBag.roomDetails.id)" />
+                                  <button class="w3-btn w3-red w3-round">Remove&nbsp;<img src="~/Content/images/icon.png" width="20px" height="20px" /></button>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              }
+
+          </div>
+      </div>
+      <div class="col-md-3">
+          <h5 class="w3-padding w3-black">Edit Room</h5>
+          <div class="w3-card-4 w3-padding" style="margin-top:-10px">
+              <form method="post" action="/Home/edit_room_details">
+                  <input type="hidden" value="@Html.Encode(ViewBag.roomDetails.id)" name="id"/>
+                  <div class="form-group">
+                      <label>Room ID:</label>
+                      <input type="text" name="rid" value="@Html.Encode(ViewBag.roomDetails.room_id)" placeholder="Enter the Romm ID..." class="form-control" required/>
+                  </div>
+                  <div class="form-group">
+                      <label>Block:</label>
+                      <input type="text" name="block" value="@Html.Encode(ViewBag.roomDetails.blook)" placeholder="Enter the Block Name..." class="form-control" required/>
+                  </div>
+                  <div class="form-group">
+                      <label>Floor:</label>
+                      <input type="number" name="floor_number" value="@Html.Encode(ViewBag.roomDetails.floor)" placeholder="Enter the Floor Number..." class="form-control" required/>
+                  </div>
+                  <div class="form-group">
+                      <center><button class="w3-btn w3-blue w3-round w3-small">Update</button></center>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

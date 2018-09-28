@@ -1,0 +1,12 @@
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\bin\Debug\MyTest.EntityLayer.dll.config
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\bin\Debug\MyTest.EntityLayer.dll
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\bin\Debug\MyTest.EntityLayer.pdb
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\bin\Debug\EntityFramework.dll
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\bin\Debug\EntityFramework.xml
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\obj\Debug\MyTest.EntityLayer.csprojAssemblyReference.cache
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\obj\Debug\MyTest.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\obj\Debug\MyTest.EntityLayer.csproj.CopyComplete
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\obj\Debug\MyTest.EntityLayer.dll
+C:\Users\M1046896\source\repos\MyTest\MyTest.EntityLayer\obj\Debug\MyTest.EntityLayer.pdb

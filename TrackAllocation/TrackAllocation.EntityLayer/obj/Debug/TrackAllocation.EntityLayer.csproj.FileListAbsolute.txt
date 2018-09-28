@@ -1,0 +1,12 @@
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\bin\Debug\TrackAllocation.EntityLayer.dll.config
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\bin\Debug\TrackAllocation.EntityLayer.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\bin\Debug\TrackAllocation.EntityLayer.pdb
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\bin\Debug\EntityFramework.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\bin\Debug\EntityFramework.xml
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\obj\Debug\TrackAllocation.EntityLayer.csprojAssemblyReference.cache
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\obj\Debug\TrackAllocation.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\obj\Debug\TrackAllocation.EntityLayer.csproj.CopyComplete
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\obj\Debug\TrackAllocation.EntityLayer.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.EntityLayer\obj\Debug\TrackAllocation.EntityLayer.pdb

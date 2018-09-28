@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container">
+    <div class="row" style="margin-top:200px;margin-bottom:200px">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <center>
+                <button class="btn btn-warning">@Html.ActionLink("ADD MIND", "ADD_MIND","Home")</button>
+                <a href="/Home/ALL_MINDS"><button class="btn btn-info">MINDS</button></a>
+                <button class="btn btn-success">@Html.ActionLink("ADD TRACK","ADD_TRACK","Home")</button>
+                <button class="btn btn-danger">@Html.ActionLink("TRACKs", "ALL_TRACKS", "Home")</button>
+            </center>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

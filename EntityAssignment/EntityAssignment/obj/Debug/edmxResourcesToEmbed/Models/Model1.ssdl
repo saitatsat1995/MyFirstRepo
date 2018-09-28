@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="minds">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
+    <Property Name="track_id" Type="int" />
+  </EntityType>
+  <EntityType Name="tracks">
+    <Key>
+      <PropertyRef Name="Track_ID" />
+    </Key>
+    <Property Name="Track_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Track_Name" Type="varchar" MaxLength="50" />
+    <Property Name="RoomAllocated" Type="varchar" MaxLength="50" />
+    <Property Name="LeadName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_minds_minds">
+    <End Role="tracks" Type="Self.tracks" Multiplicity="0..1" />
+    <End Role="minds" Type="Self.minds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tracks">
+        <PropertyRef Name="Track_ID" />
+      </Principal>
+      <Dependent Role="minds">
+        <PropertyRef Name="track_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EntityModelStoreContainer">
+    <EntitySet Name="minds" EntityType="Self.minds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tracks" EntityType="Self.tracks" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_minds_minds" Association="Self.FK_minds_minds">
+      <End Role="tracks" EntitySet="tracks" />
+      <End Role="minds" EntitySet="minds" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

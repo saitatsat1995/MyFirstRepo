@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Creat_Event";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h4 class="w3-blue w3-padding">Create Events</h4>
+            <div class="w3-card-4 w3-padding" style="margin-top:-10px">
+                <form method="POST" action="/Events/server_data">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" name="eventTitle" class="form-control" placeholder="Enter the Event Name..." required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="datetime-local" name="eventDate" class="form-control" placeholder="Enter the Event Date..." required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <input type="number" name="eventDuration" class="form-control" placeholder="Enter the Event Duration..." required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" name="eventDescription" class="form-control" placeholder="Enter the Event Description..." required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" name="eventLocation" class="form-control" placeholder="Enter the Event Location..." required/>
+                    </div>
+                    <div class="form-group">
+                        <label>IsPublic:&nbsp;&nbsp;</label>
+                        <input type="radio" name="eventIsPublic" value="1" required/>Yes&nbsp;&nbsp;
+                        <input type="radio" name="eventIsPublic" value="0" required/>No
+                    </div>
+                    <div class="form-group">
+                        <center><button class="w3-button w3-green w3-roud">CREATE</button></center> 
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

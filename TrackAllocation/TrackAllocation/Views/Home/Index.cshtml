@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container">
+   <div class="col-md-6">
+       <h5>ADD Preferences</h5>
+       <form action="/Home/Add_preference">
+           <div class="form-group">
+               <label>MID</label>
+               <input type="number" name="mid" class="form-control" placeholder="Enter the Mindtree ID..." required />
+           </div>
+           <div class="form-group">
+               <label>1st Preference</label>
+               <select name="location1" class="form-control" required>
+                   @foreach (var i in ViewBag.LocationList)
+                   {
+                       <option value="@Html.Encode(i.Id)">@Html.Encode(i.LocationName)</option>
+                   }
+               </select>
+           </div>
+           <div class="form-group">
+               <label>2nd Preference</label>
+               <select name="location2" class="form-control" required>
+                   @foreach (var i in ViewBag.LocationList)
+                   {
+                       <option value="@Html.Encode(i.Id)">@Html.Encode(i.LocationName)</option>
+                   }
+               </select>
+           </div>
+           <div class="form-group">
+               <label>3rd Preference</label>
+               <select name="location3" class="form-control" required>
+                   @foreach (var i in ViewBag.LocationList)
+                   {
+                       <option value="@Html.Encode(i.Id)">@Html.Encode(i.LocationName)</option>
+                   }
+               </select>
+           </div>
+           <div class="form-group">
+               <label>Track</label>
+               <input type="string" name="track" class="form-control" placeholder="Enter Your Track..." required />
+           </div>
+           <div class="form-group">
+               <button class="btn btn-primary">ADD</button>
+           </div>
+       </form>
+       @Html.Encode(ViewBag.msg)
+   </div>
+   <div class="col-md-6">
+       <table class="table table-striped">
+           <tr>
+               <th>MID</th>
+               <th>Location 1</th>
+               <th>Location 2</th>
+               <th>Location 3</th>
+               <th>Track</th>
+           </tr>
+           @foreach (var i in ViewBag.Details) {
+
+           <tr>
+               @foreach (var j in i) {
+                 <td>@Html.Encode(j)</td>
+               }
+           </tr>
+           }
+       </table>
+    </div>
+</div>

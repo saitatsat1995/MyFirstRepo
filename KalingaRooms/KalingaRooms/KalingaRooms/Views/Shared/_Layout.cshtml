@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="w3-container w3-blue" style="margin-top:-50px">
+        <div class="row w3-padding">
+            <div class="col-md-2">
+                <a href="/Home"><b><h4>KalingaRooms</h4></b></a>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <div class="w3-container" style="margin-left:-1px">
+        <div class="row">
+            <div class="col-md-1 w3-blue w3-small" style="min-height:700px">
+                <div class="w3-container w3-padding">
+                    <a href="/Home/Add_User">
+                        <img src="~/Content/images/new-user.png" width="100%" />
+                        <br />
+                        <center><b>ADD</b></center>
+                    </a>
+                </div>
+                <div class="w3-container w3-padding w3-small">
+                    <a href="/Home/Minds">
+                        <img src="~/Content/images/user-silhouette.png" width="100%" />
+                        <br />
+                        <center><b>MINDS</b></center>
+                    </a>
+                </div>
+                <div class="w3-container w3-padding w3-small">
+                    <a href="/Home/Rooms">
+                        <img src="~/Content/images/key-card.png" width="100%" />
+                        <br />
+                        <center><b>ROOMS</b></center>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-11 w3-padding">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    
+    <div class="w3-container w3-blue w3-padding">
+        <footer>
+            <center><p>KalingaRooms</p></center>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/main.js"></script>
+</body>
+</html>

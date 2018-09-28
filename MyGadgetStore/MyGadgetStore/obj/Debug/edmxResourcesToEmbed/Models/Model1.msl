@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyGadgetStoreModelStoreContainer" CdmEntityContainer="MyGadgetStoreEntities">
+    <EntitySetMapping Name="gadgets">
+      <EntityTypeMapping TypeName="MyGadgetStoreModel.gadget">
+        <MappingFragment StoreEntitySet="gadget">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="isFav" ColumnName="isFav" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

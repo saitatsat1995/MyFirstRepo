@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Add_User";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h5 class="w3-padding w3-black"><center><b>ADD USER</b></center></h5>
+            <div class="w3-border w3-padding" style="margin-top:-10px;">
+                <form method="post" action="/Home/add_user_server" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>MID</label>
+                        <input type="text" name="mid" placeholder="Enter the mid" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Enter the Name..." class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Track</label>
+                        <input type="text" name="track" placeholder="Enter the track..." class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Image:</label>
+                        <input type="file" name="fileBase" placeholder="Select the profile picture" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <center><button class="w3-btn w3-round w3-pink">Submit</button></center>
+                    </div>
+                </form>
+            </div>
+            <h5 class="w3-padding w3-black" style="margin-top:-10px;"><center>KalingaRooms</center></h5>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+

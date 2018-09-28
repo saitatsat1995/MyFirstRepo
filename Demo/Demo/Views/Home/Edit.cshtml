@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="padding:50px">
+            <div class="panel">
+              <div class="row">
+               <form method="POST" action="/Home/Edit_data">
+                 <div class="col-md-8">
+                    <input type="hidden" name="id" value="@Html.Encode(ViewBag.bookData.id)" class="form-control" />
+                 </div>
+                <div class="col-md-8">
+                   <input type="text" name="Dataname" value="@Html.Encode(ViewBag.bookData.name)" class="form-control"/>
+                </div>     
+                <div class="col-md-4">
+                    <button class="btn btn-danger">Update</button>
+                </div>
+               </form>
+               </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

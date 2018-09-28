@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KalingaRoomsModelStoreContainer" CdmEntityContainer="KalingaRoomsEntities">
+    <EntitySetMapping Name="kalingaRooms">
+      <EntityTypeMapping TypeName="KalingaRoomsModel.kalingaRoom">
+        <MappingFragment StoreEntitySet="kalingaRooms">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="room_id" ColumnName="room_id" />
+          <ScalarProperty Name="blook" ColumnName="blook" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="beds" ColumnName="beds" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="minds">
+      <EntityTypeMapping TypeName="KalingaRoomsModel.mind">
+        <MappingFragment StoreEntitySet="minds">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="track" ColumnName="track" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="room_id" ColumnName="room_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

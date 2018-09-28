@@ -1,0 +1,17 @@
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\3layer.DataAccessLayer.dll.config
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\3layer.DataAccessLayer.dll
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\3layer.DataAccessLayer.pdb
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\3layer.EntityLayer.dll
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\3layer.EntityLayer.pdb
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\3layer.EntityLayer.dll.config
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\obj\Debug\3layer.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\obj\Debug\3layer.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\obj\Debug\3layer.DataAccessLayer.csproj.CopyComplete
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\obj\Debug\3layer.DataAccessLayer.dll
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\obj\Debug\3layer.DataAccessLayer.pdb
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\obj\Debug\_3layer.DataAccessLayer.Migrations.bibhu.resources
+C:\Users\M1046896\source\repos\3layer\3layer.DataAccessLayer\obj\Debug\3layer.DataAccessLayer.csproj.GenerateResource.cache

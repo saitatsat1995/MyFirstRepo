@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Minds";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="w3-container">
+    <div class="row">
+        @foreach (var i in ViewBag.MindList)
+        {
+            <div class="col-md-3 w3-padding">
+                <div class="w3-card-2">
+                    <img src="~/Content/images/@Html.Encode(i.img)" style="height:300px;width:100%" />
+                    <div class="w3-padding w3-center"><b>@Html.Encode(i.name)</b></div>
+                    <div class="w3-padding w3-small w3-center">@Html.Encode(i.mid)</div>
+                    <div class="w3-padding w3-small w3-center">@Html.Encode(i.track)</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

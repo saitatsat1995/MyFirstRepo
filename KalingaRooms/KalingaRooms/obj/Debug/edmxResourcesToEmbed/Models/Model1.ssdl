@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KalingaRoomsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="kalingaRooms">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="room_id" Type="varchar" MaxLength="50" />
+    <Property Name="blook" Type="varchar" MaxLength="50" />
+    <Property Name="floor" Type="varchar" MaxLength="50" />
+    <Property Name="beds" Type="int" />
+  </EntityType>
+  <EntityType Name="minds">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mid" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="track" Type="varchar" MaxLength="50" />
+    <Property Name="img" Type="varchar" MaxLength="50" />
+    <Property Name="room_id" Type="int" />
+  </EntityType>
+  <EntityContainer Name="KalingaRoomsModelStoreContainer">
+    <EntitySet Name="kalingaRooms" EntityType="Self.kalingaRooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="minds" EntityType="Self.minds" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

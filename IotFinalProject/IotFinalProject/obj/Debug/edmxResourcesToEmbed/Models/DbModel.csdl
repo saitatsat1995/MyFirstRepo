@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IotFinalProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DeviceLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="device_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="device_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="device_value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SensorLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sensor_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sensor_value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sensor_data" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="IotFinalProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DeviceLogs" EntityType="Self.DeviceLog" />
+    <EntitySet Name="SensorLogs" EntityType="Self.SensorLog" />
+  </EntityContainer>
+</Schema>

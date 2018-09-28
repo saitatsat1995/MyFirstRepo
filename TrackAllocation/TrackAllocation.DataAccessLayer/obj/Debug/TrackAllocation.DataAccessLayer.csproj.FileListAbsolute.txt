@@ -1,0 +1,17 @@
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\TrackAllocation.DataAccessLayer.dll.config
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\TrackAllocation.DataAccessLayer.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\TrackAllocation.DataAccessLayer.pdb
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\TrackAllocation.EntityLayer.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\TrackAllocation.EntityLayer.pdb
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\TrackAllocation.EntityLayer.dll.config
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\obj\Debug\TrackAllocation.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\obj\Debug\TrackAllocation.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\obj\Debug\TrackAllocation.DataAccessLayer.csproj.CopyComplete
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\obj\Debug\TrackAllocation.DataAccessLayer.dll
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\obj\Debug\TrackAllocation.DataAccessLayer.pdb
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\obj\Debug\TrackAllocation.DataAccessLayer.Migrations.sai.resources
+C:\Users\M1046896\source\repos\TrackAllocation\TrackAllocation.DataAccessLayer\obj\Debug\TrackAllocation.DataAccessLayer.csproj.GenerateResource.cache

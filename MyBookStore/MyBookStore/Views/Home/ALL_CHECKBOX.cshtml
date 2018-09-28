@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="w3-container" style="background: url(../../Content/images/books.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;padding-top:50px;padding-bottom:200px">
+    <div class="container">
+        <center><h4><b>ALL BOOK</b><button class="w3-btn w3-blue w3-padding w3-round w3-right w3-small" id="add_to_fav">ADD TO FAV</button></h4></center>
+        <center></center>
+        <table class="w3-table-all">
+            @foreach (var i in ViewBag.ALL)
+            {
+                <tr>
+                    <td><img src="~/Content/images/@Html.Encode(i.img)" width="50px" height="50px" /></td>
+         
+                    <td>@Html.Encode(i.title)</td>
+               
+                    <td>@Html.Encode(i.author)</td>
+                
+                    <td>@Html.Encode(i.category)</td>
+                
+                    <td>@Html.Encode(i.location)</td>
+               
+                    <td>Total Pages: @Html.Encode(i.pages)</td>
+                
+                    <td>Tags: @Html.Encode(i.tags)</td>
+                    <td>
+                        <center>
+                            @if (i.isFav == 1) {
+                                   <span class="w3-green w3-round"><img src="~/Content/images/heart.png" height="15px" /> </span>
+                            } else { 
+                                   <span class="w3-red w3-round"><img src="~/Content/images/heart.png" height="15px" /> </span>
+                            }
+                        </center>
+                    </td>
+                    <td>
+                        @if (i.isFav == 1)
+                        {
+                             <input type="checkbox" id="@Html.Encode(i.id)" class="fav_check" checked>
+                        }
+                        else
+                        {
+                             <input type="checkbox" id="@Html.Encode(i.id)" class="fav_check">
+                        }
+                        
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<div class="w3-modal" id="ld">
+    <centrer><img src="~/Content/images/loading.gif"></centrer>
+    <br/>
+    <center><h5>Loading....</h5></center>
+</div>

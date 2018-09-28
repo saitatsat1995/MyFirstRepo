@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "ALL";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        @foreach (var i in ViewBag.ALL)
+        {
+        <div class="col-md-3 w3-padding">
+            <div class="w3-container w3-border">
+                <img src="~/Content/images/@Html.Encode(i.image)" width="100%" height="250px"/>
+            </div>
+            <div class="w3-card-2 w3-border">
+                <div class="w3-container">
+                    <center><b>@Html.Encode(i.name)</b></center>
+                </div>
+                <div class="w3-container w3-small">
+                    <center>@Html.Encode(i.company)</center>
+                </div>
+                <div class="w3-container w3-small">
+                    <center>@Html.Encode(i.category)</center>
+                </div>
+                <div class="w3-container w3-small">
+                    @if (i.isFav == 1)
+                    {
+                        <center>
+                            <form method="POST" action="/Home/Remove_to_fav">
+                                <input type="hidden" name="id" value="@Html.Encode(i.id)" />
+                                <center><button class="w3-btn w3-red w3-small w3-round"><img src="~/Content/images/heart.png" height="15px" /></button></center>
+                            </form>
+                        </center>
+                    }
+                    else
+                    {
+                        <form method="POST" action="/Home/Add_to_fav">
+                            <input type="hidden" name="id" value="@Html.Encode(i.id)" />
+                            <center><button class="w3-btn w3-green w3-small w3-round"><img src="~/Content/images/heart.png" height="15px" /></button></center>
+                        </form>
+                    }
+                </div>
+            </div>
+            </div>
+            }
+        </div>
+</div>
+

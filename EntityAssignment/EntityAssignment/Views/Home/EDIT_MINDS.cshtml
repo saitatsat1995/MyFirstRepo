@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "EDIT MINDS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container" style="margin-top:100px">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-3">
+            <h5 style="padding:10px;background-color:#0026ff;color:#ffffff"><b><center>EDIT MINDS</center></b></h5>
+            <form method="POST" action="/Home/edit_minds_server">
+                <div class="form-group">
+                    <label>MID</label>
+                    <input type="number" class="form-control" name="mid" value="@Html.Encode(ViewBag.mind.MID)" readonly placeholder="Enter Track ID" />
+                </div>
+                <div class="form-group">
+                    <label>NAME</label>
+                    <input type="text" class="form-control" name="name" value="@Html.Encode(ViewBag.mind.Name)" placeholder="Enter Track Name" />
+                </div>
+                <div class="form-group">
+                    <label>GENDER</label>
+                    <input type="text" class="form-control" name="gender" value="@Html.Encode(ViewBag.mind.Gender)" placeholder="Enter Track Name" />
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" class="form-control" name="ph" value="@Html.Encode(ViewBag.mind.ContactNumber)" placeholder="Enter Track Name" />
+                </div>
+                <div class="form-group">
+                    <label>Track</label>
+                    <select name="trackId" class="form-control">
+                        @foreach (var i in ViewBag.trackList)
+                        {
+                          <option value="@Html.Encode(i.Track_ID)" @if (Convert.ToInt32(i.Track_ID) == Convert.ToInt32(ViewBag.mind.track_id)) { Html.Raw("Seclected"); } >@Html.Encode(i.Track_Name) || @Html.Encode(i.LeadName)</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <center><button class="btn btn-primary">ADD</button></center>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+

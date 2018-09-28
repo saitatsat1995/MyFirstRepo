@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "ALL_MINDS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <tr>
+                <th>MID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Track ID</th>
+                <th>Operations</th>
+            </tr>
+            @foreach (var i in ViewBag.mindList)
+            {
+                <tr>
+                    <td>@Html.Encode(i.MID)</td>
+                    <td>@Html.Encode(i.Name)</td>
+                    <td>@Html.Encode(i.Gender)</td>
+                    <td>@Html.Encode(i.track_id)</td>
+                    <td><a href="/Home/EDIT_MINDS/@Html.Encode(i.MID)">Edit</a> | <a href="/Home/MIND_DETAILS/@Html.Encode(i.MID)">Details</a> | <a href="/Home/Delete/@Html.Encode(i.MID)">Delete</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

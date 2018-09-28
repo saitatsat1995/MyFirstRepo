@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Creat_Event";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Account</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 w3-padding-64">
+                <div class="panel panel-danger">
+                    <div class="w3-padding w3-blue"><center><h5>DashBoard</h5></center></div>
+                    <div class="panel-body">
+                        <table class="w3-table-all">
+                            <tr>
+                                <td>ID</td>
+                                <td>@ViewBag.Id</td>
+                            </tr>
+                            <tr>
+                                <td>NAME</td>
+                                <td>@ViewBag.userName</td>
+                            </tr>
+                            <tr>
+                                <td>EMAIL</td>
+                                <td>@ViewBag.email</td>
+                            </tr>
+                            <tr>
+                                <td><button class="w3-btn w3-pink w3-round">@Html.ActionLink("Events", "Index", "Events")</button></td>
+                                <td><button class="w3-btn w3-green w3-round">@Html.ActionLink("Logout", "Logout", "Home")</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="w3-padding w3-blue"><center>www.xyz.com</center></div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</body>
+</html>

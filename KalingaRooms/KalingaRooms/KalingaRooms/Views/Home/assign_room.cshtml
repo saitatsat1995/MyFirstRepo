@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "assign_room";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+   <div class="row">
+       <table class="w3-table-all">
+           <tr>
+               <th>IMAGE</th>
+               <th>NAME</th>
+               <th>MID</th>
+               <th>TRACK</th>
+               <th>ADD</th>
+           </tr>
+           @foreach (var i in ViewBag.assign_room) {
+           <tr>
+               <td><img src="~/Content/images/@Html.Encode(i.img)" style="height:80px;width:80px"></td>
+               <td>@Html.Encode(i.name)</td>
+               <td>@Html.Encode(i.mid)</td>
+               <td>@Html.Encode(i.track)</td>
+               <td>
+                   <form action="/Home/assign_room_to_minds" method="POST">
+                       <input type="hidden" value="@Html.Encode(ViewBag.assign_room_id)" name="room_id">
+                       <input type="hidden" value="@Html.Encode(i.id)" name="mind_id">
+                       <button class="w3-btn w3-small w3-round w3-green">ADD</button>
+                   </form>
+               </td>
+           </tr>
+           }
+       </table>
+   </table>
+</div>
+

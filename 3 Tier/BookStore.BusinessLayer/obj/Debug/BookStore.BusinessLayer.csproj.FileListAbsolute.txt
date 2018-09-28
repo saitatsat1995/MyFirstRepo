@@ -1,0 +1,13 @@
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\BookStore.BusinessLayer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\BookStore.BusinessLayer.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\BookStore.DataAccessLayer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\BookStore.Entities.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\BookStore.DataAccessLayer.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\BookStore.DataAccessLayer.dll.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\BookStore.Entities.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\BookStore.Entities.dll.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\obj\Debug\BookStore.BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\obj\Debug\BookStore.BusinessLayer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\BookStore.BusinessLayer\obj\Debug\BookStore.BusinessLayer.pdb

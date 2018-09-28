@@ -1,0 +1,160 @@
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\ApplicationInsights.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\csc.exe
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\csc.exe.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\csc.rsp
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\csi.exe
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\csi.rsp
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\System.AppContext.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\vbc.exe
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\vbc.exe.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\vbc.rsp
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\VBCSCompiler.exe
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\bookStore.dll.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\bookStore.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\bookStore.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Antlr3.Runtime.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\BookStore.BusinessLayer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\BookStore.DataAccessLayer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\BookStore.Entities.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\EntityFramework.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\EntityFramework.SqlServer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.Web.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.ApplicationInsights.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Newtonsoft.Json.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.Helpers.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.Mvc.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.Optimization.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.Razor.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.WebPages.Deployment.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.WebPages.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.WebPages.Razor.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\WebGrease.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\BookStore.BusinessLayer.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\BookStore.DataAccessLayer.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\BookStore.DataAccessLayer.dll.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\BookStore.Entities.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\BookStore.Entities.dll.config
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\EntityFramework.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\EntityFramework.SqlServer.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.Helpers.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.Mvc.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.Optimization.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.Razor.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.WebPages.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.WebPages.Deployment.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\System.Web.WebPages.Razor.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Antlr3.Runtime.pdb
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Newtonsoft.Json.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.ApplicationInsights.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\bin\Microsoft.AI.Web.xml
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\obj\Debug\bookStore.csprojResolveAssemblyReference.cache
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\obj\Debug\bookStore.dll
+C:\Users\M1042829\Documents\Visual Studio 2017\Projects\bookStore\bookStore\obj\Debug\bookStore.pdb
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\ApplicationInsights.config
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\csc.exe
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\csc.exe.config
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\csc.rsp
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\csi.exe
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\csi.rsp
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\System.AppContext.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\vbc.exe
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\vbc.exe.config
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\vbc.rsp
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\VBCSCompiler.exe
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\bookStore.dll.config
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\bookStore.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\bookStore.pdb
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Antlr3.Runtime.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\BookStore.BusinessLayer.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\BookStore.DataAccessLayer.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\BookStore.Entities.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\EntityFramework.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\EntityFramework.SqlServer.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.Web.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.ApplicationInsights.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Newtonsoft.Json.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.Helpers.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.Mvc.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.Optimization.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.Razor.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.WebPages.Deployment.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.WebPages.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.WebPages.Razor.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\WebGrease.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\BookStore.BusinessLayer.pdb
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\BookStore.DataAccessLayer.pdb
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\BookStore.DataAccessLayer.dll.config
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\BookStore.Entities.pdb
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\BookStore.Entities.dll.config
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\EntityFramework.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\EntityFramework.SqlServer.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.Helpers.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.Mvc.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.Optimization.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.Razor.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.WebPages.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.WebPages.Deployment.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\System.Web.WebPages.Razor.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Antlr3.Runtime.pdb
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Newtonsoft.Json.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.ApplicationInsights.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\bin\Microsoft.AI.Web.xml
+C:\Users\M1046896\source\repos\3 Tier\bookStore\obj\Debug\bookStore.csprojAssemblyReference.cache
+C:\Users\M1046896\source\repos\3 Tier\bookStore\obj\Debug\bookStore.csproj.CoreCompileInputs.cache
+C:\Users\M1046896\source\repos\3 Tier\bookStore\obj\Debug\bookStore.csproj.CopyComplete
+C:\Users\M1046896\source\repos\3 Tier\bookStore\obj\Debug\bookStore.dll
+C:\Users\M1046896\source\repos\3 Tier\bookStore\obj\Debug\bookStore.pdb

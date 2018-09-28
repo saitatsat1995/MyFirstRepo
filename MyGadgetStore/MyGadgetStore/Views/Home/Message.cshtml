@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="w3-container">
+    <center>
+        <img src="~/Content/images/loading.gif"/><br/>
+        <h5><b>@Html.Encode(ViewBag.msg)</b></h5>
+    </center>
+</div>
+<script>
+    setTimeout(window.location="/Home/Index", 1000);
+</script>

@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Rooms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="w3-container">
+    <div class="row">
+        <div class="col-md-9">
+            <h4 class="w3-padding w3-black">Room List</h4>
+            <div class="w3-padding w3-card-2" style="margin-top:-10px">
+                <table class="w3-table-all w3-small">
+                    <tr>
+                        <th>Room ID</th>
+                        <th>Blook</th>
+                        <th>Floor</th>
+                        <th>Assigned</th>
+                        <th>SET</th>
+                    </tr>
+                    @foreach (var i in ViewBag.KalingaRooms) {
+                    <tr>
+                        <td>@Html.Encode(i.room_id)</td>
+                        <td>@Html.Encode(i.blook)</td>
+                        <td>@Html.Encode(i.floor)</td>
+                        <td>@Html.Encode((i.beds))</td>
+                        <td>
+                            @if ((2 - i.beds) == 0)
+                            {
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <form method="POST" action="/Home/edit_assign_room">
+                                        <input type="hidden" name="room_id" value="@Html.Encode(i.id)">
+                                        <button class="w3-btn w3-round w3-small w3-green"><img src="~/Content/images/pencil.png" height="20px" /></button>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                            }
+                            else
+                            {
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <form method="POST" action="/Home/assign_room">
+                                        <input type="hidden" name="id" value="@Html.Encode(i.id)">
+                                        <button class="w3-btn w3-round w3-small w3-teal"><img src="~/Content/images/plus.png" height="20px" /></button>
+                                    </form>
+                                </div>
+                                <div class="col-md-2">
+                                    <form method="POST" action="/Home/edit_assign_room">
+                                        <input type="hidden" name="room_id" value="@Html.Encode(i.id)">
+                                        <button class="w3-btn w3-round w3-small w3-green"><img src="~/Content/images/pencil.png" height="20px" /></button>
+                                    </form>
+                                </div>
+                                
+                            </div>
+
+                                
+                                
+                                
+
+                                }
+</td>
+                    </tr>
+                    }
+                 </table>
+                </div>
+        </div>
+        <div class="col-md-3">
+            <h4 class="w3-padding w3-black">Add Room</h4>
+            <div class="w3-padding w3-card-2" style="margin-top:-10px">
+              <form method="post" action="/Home/add_room_server">
+                <div class="form-group">
+                    <label>Room ID:</label>
+                    <input type="text" name="rid" placeholder="Enter the Romm ID..." class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>Block:</label>
+                    <input type="text" name="block" placeholder="Enter the Block Name..." class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>Floor:</label>
+                    <input type="number" name="floor_number" placeholder="Enter the Floor Number..." class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <center><button class="w3-btn w3-blue w3-round w3-small">Submit</button></center>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+

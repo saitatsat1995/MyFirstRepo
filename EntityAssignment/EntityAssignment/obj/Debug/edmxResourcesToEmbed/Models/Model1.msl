@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EntityModelStoreContainer" CdmEntityContainer="EntityEntities">
+    <EntitySetMapping Name="minds">
+      <EntityTypeMapping TypeName="EntityModel.mind">
+        <MappingFragment StoreEntitySet="minds">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="track_id" ColumnName="track_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tracks">
+      <EntityTypeMapping TypeName="EntityModel.track">
+        <MappingFragment StoreEntitySet="tracks">
+          <ScalarProperty Name="Track_ID" ColumnName="Track_ID" />
+          <ScalarProperty Name="Track_Name" ColumnName="Track_Name" />
+          <ScalarProperty Name="RoomAllocated" ColumnName="RoomAllocated" />
+          <ScalarProperty Name="LeadName" ColumnName="LeadName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
